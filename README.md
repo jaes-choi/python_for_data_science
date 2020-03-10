@@ -52,3 +52,9 @@
 > 엄마곰은 날씬해  <br>
 > 애기곰은 너무 귀여워  <br>
 > 히쭉히쭉 잘한다 <br>
+
+## backpack_list
+
+backpack_list = ['paper', 'orange', 'book', 'paper', 'paper', 'apple', 'paper',
+       'paper', 'orange', 'tumbler', 'tumbler', 'paper', 'book', 'pencil',
+       'paper', 'tumbler']
