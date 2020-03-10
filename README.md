@@ -1,8 +1,10 @@
 # 데이터 과학을 위한 Python
 ### @DataSolution_Learning_Center
+- 실습에 필요한 파일들이 저장되어 있습니다.
 
 
-# Notebook 사용할 때 편리한 Shortcut들 정리
+## Notebook 사용할 때 편리한 Shortcut들 정리
+
 
 ### cell 실행
 - [ctrl]-[enter]
