@@ -60,9 +60,11 @@ backpack_list = ['paper', 'orange', 'book', 'paper', 'paper', 'apple', 'paper',
        'paper', 'tumbler']
 
 ## plot에서 한글 문제있을 때
-```import matplotlib.pyplot as plt
+```python
+import matplotlib.pyplot as plt
 
 plt.rcParams['font.family'] = 'Malgun Gothic'
-plt.rcParams['axes.unicode_minus'] = False```
+plt.rcParams['axes.unicode_minus'] = False
+```
 
 
