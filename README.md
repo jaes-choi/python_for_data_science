@@ -70,6 +70,11 @@ plt.rcParams['axes.unicode_minus'] = False
 ```python
 
 # 데이터 만들기 
+a = np.arange(1,6)
+b = a ** 2
+c = (5-a) ** 2
+d = a + b + c
+
 np.random.seed(19961213)
 N = 200
 x = np.random.randn(N)
