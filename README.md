@@ -115,3 +115,60 @@ plt.show()
 ```
 
 
+``` python
+
+# 지도 좌표에 원 그리기
+import folium
+loc_center = list(ta[['위도','경도']].mean())
+m = folium.Map(location= loc_center, zoom_start=7, tiles='Stamen Toner')
+for idx, row in ta.iterrows():
+    folium.CircleMarker([row['위도'], row['경도']], 
+                        radius=3, color='red', 
+                        fill_color='red').add_to(m)
+
+m
+
+##############################################
+# html 파일로 저장
+m = folium.Map(location= loc_center, zoom_start=7, tiles='Stamen Toner')
+for idx, row in ta.iterrows():
+    folium.CircleMarker([row['위도'], row['경도']], 
+                        radius=3, color='red', 
+                        fill_color='red').add_to(m)
+m.save('../working/folium1.html')
+
+
+##############################################
+from folium import plugins
+
+loc_center = list(ta[['위도','경도']].mean())
+m = folium.Map(location= loc_center, zoom_start=8)
+
+# 지도 좌표에 heatmap plugin 추가
+m.add_child(plugins.HeatMap(ta[['위도','경도']].values, radius=10)) 
+
+
+
+
+##############################################
+import json
+import folium
+
+loc_center = list(ta[['위도','경도']].mean())
+m = folium.Map(location=loc_center, zoom_start=7)
+
+# 한국 시도 경계 json 파일 읽기
+# https://github.com/southkorea/southkorea-maps/blob/master/kostat/2013/json/skorea_provinces_geo_simple.json
+geo_json = json.load(open('../data/skorea_provinces_geo_simple.json', encoding='utf-8'))
+
+ta_merged = pd.read_pickle('../working/ta_merged.pkl')
+
+folium.Choropleth(
+    geo_data=geo_json,
+    data=ta_merged,
+    columns=['행정기관','사고건수'], 
+    key_on='feature.properties.name', 
+    fill_color='Blues', # 'YlGn' 'Reds'
+).add_to(m)
+m
+```
