@@ -67,4 +67,46 @@ plt.rcParams['font.family'] = 'Malgun Gothic'
 plt.rcParams['axes.unicode_minus'] = False
 ```
 
+```python
+
+# 데이터 만들기 
+np.random.seed(19961213)
+N = 200
+x = np.random.randn(N)
+y1 = 10*x + 5*np.random.randn(N)
+y2 = -5*x + 3*np.random.randn(N)+10
+
+# pie chart
+plt.pie(a, 
+        autopct='%1.1f%%', 
+        explode=[0,0,0,0,0.1],
+        startangle=90, 
+        shadow=True
+       )
+plt.show()
+
+plt.scatter(x, y1)
+plt.scatter(x, y2)
+plt.show()
+
+y = pd.DataFrame([y1, y2]).T
+
+# Legend와 Stacked, color
+colors=['red','blue']
+plt.hist(y, color=colors, label=colors, stacked=True)
+plt.legend()
+plt.show()
+
+# 하나에 4개 subplot 그려보기
+fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(8,6))
+axes[0,0].hist(y)
+axes[0,1].hist(y, 20, color=colors, label=colors, stacked=True)
+axes[0,1].legend()
+axes[1,0].scatter(x,y1)
+axes[1,0].scatter(x,y2)
+axes[1,1].boxplot(y, labels=colors)
+plt.show()
+
+```
+
 
