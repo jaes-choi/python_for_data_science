@@ -172,3 +172,29 @@ folium.Choropleth(
 ).add_to(m)
 m
 ```
+
+``` python
+clfs = []
+
+# LogisticRegression
+from sklearn.linear_model import LogisticRegression
+clfs.append(LogisticRegression(solver='liblinear', multi_class='auto'))
+
+# Support Vector Machine 
+from sklearn.svm import SVC
+clfs.append(SVC(gamma=0.001))
+
+# Naive Bayes
+from sklearn.naive_bayes import GaussianNB
+clfs.append(GaussianNB())
+
+for clf in clfs:
+    # 모델 적합
+    clf.fit(X_train, y_train)
+    # 모델에의 의한 예측
+    y_pred = clf.predict(X_test)
+    # 모델 평가
+    print(f'{clf.__class__.__name__}:')
+    print(f'Accuracy: {metrics.accuracy_score(y_test, y_pred)}')
+    print('='*30)
+```
