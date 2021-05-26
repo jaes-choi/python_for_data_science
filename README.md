@@ -147,7 +147,7 @@ m = folium.Map(location= loc_center, zoom_start=8)
 # 지도 좌표에 heatmap plugin 추가
 m.add_child(plugins.HeatMap(ta[['위도','경도']].values, radius=10)) 
 
-
+m
 
 
 ##############################################
