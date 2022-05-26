@@ -17,3 +17,10 @@ ta_agg.columns
 
 ta_agg.columns = ['사망','사망_max','중상','대형','대형사고율','사고건수']
 ta_agg
+
+
+pd.DataFrame({'사망': ta.groupby('발생지시도')['사망자수'].sum(), 
+              '중상': ta.groupby('발생지시도')['중상자수'].sum(), 
+              '대형': ta.groupby('발생지시도')['대형사고'].sum(), 
+              '대형사고율': ta.groupby('발생지시도')['대형사고'].mean(),
+              '사고건수': ta.groupby('발생지시도')['대형사고'].count()})
