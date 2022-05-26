@@ -24,3 +24,19 @@ pd.DataFrame({'사망': ta.groupby('발생지시도')['사망자수'].sum(),
               '대형': ta.groupby('발생지시도')['대형사고'].sum(), 
               '대형사고율': ta.groupby('발생지시도')['대형사고'].mean(),
               '사고건수': ta.groupby('발생지시도')['대형사고'].count()})
+              
+              
+# merge
+ta_agg = pd.read_pickle('../working/ta_agg.pkl')
+
+population.head(2)
+
+ta_agg.head(2)
+
+ta_agg2 = ta_agg.reset_index().rename(columns={'발생지시도':'시도'})
+
+pop_merged =population.merge(ta_agg2, on='시도')
+
+pop_merged['사고/인구'] = pop_merged['사고건수'] /pop_merged['총인구수']
+
+pop_merged.to_pickle('../working/pop_merged.pkl')
