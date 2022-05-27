@@ -1,3 +1,40 @@
+clfs = []
+
+# LogisticRegression
+from sklearn.linear_model import LogisticRegression
+clfs.append(LogisticRegression(solver='liblinear', multi_class='auto'))
+
+# Support Vector Machine 
+from sklearn.svm import SVC
+clfs.append(SVC(gamma=0.001))
+
+# Naive Bayes
+from sklearn.naive_bayes import GaussianNB
+clfs.append(GaussianNB())
+
+# K-Nearest Neighbours
+from sklearn.neighbors import KNeighborsClassifier
+clfs.append(KNeighborsClassifier(n_neighbors=8))
+
+# Decision Tree
+from sklearn.tree import DecisionTreeClassifier
+clfs.append(DecisionTreeClassifier())
+
+# Random Forest
+from sklearn.ensemble import RandomForestClassifier
+clfs.append(RandomForestClassifier(max_depth=2, random_state=0))
+
+# Gradient Boosting
+from sklearn.ensemble import GradientBoostingClassifier
+clfs.append(GradientBoostingClassifier(max_depth=2, random_state=0))
+
+# Neural Network
+from sklearn.neural_network import MLPClassifier
+clfs.append(MLPClassifier(solver='lbfgs', alpha=1e-5, hidden_layer_sizes=(5, 2), random_state=0))
+
+
+--------------------------------------------------------------------
+
 import json
 import folium
 loc_center = list(ta[['위도','경도']].mean())
