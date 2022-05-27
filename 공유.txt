@@ -1,3 +1,12 @@
+# folium
+m = folium.Map(location= loc_center, zoom_start=7, tiles='Stamen Toner')
+
+# 지도 좌표에 원 그리기
+for idx, row in ta.iterrows():
+    folium.CircleMarker([row['위도'], row['경도']], 
+                        radius=3, color='red', 
+                        fill_color='red').add_to(m)
+
 # subplot
 # 하나에 4개 subplot 그려보기
 colors=['red','blue']
