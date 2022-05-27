@@ -1,3 +1,15 @@
+# subplot
+# 하나에 4개 subplot 그려보기
+colors=['red','blue']
+fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(8,6))
+axes[0,0].hist(y)
+axes[0,1].hist(y, 20, color=colors, label=colors, stacked=True)
+axes[0,1].legend()
+axes[1,0].scatter(x,y1)
+axes[1,0].scatter(x,y2)
+axes[1,1].boxplot(y, labels=colors)
+plt.show()
+
 # 데이터 만들기 
 np.random.seed(19961213)
 N = 200
