@@ -1,4 +1,8 @@
 # folium
+
+m.add_child(plugins.HeatMap(ta[['위도','경도']].values, radius=10)) 
+
+
 m = folium.Map(location= loc_center, zoom_start=7, tiles='Stamen Toner')
 
 # 지도 좌표에 원 그리기
