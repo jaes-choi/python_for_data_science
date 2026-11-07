@@ -16,6 +16,32 @@ Windows PowerShell 기준. **오류 메시지를 먼저 읽고, 설치 경로와
 
 **참고:** `Failed to hardlink files` 경고는 캐시와 가상환경이 다른 드라이브에 있을 때 발생할 수 있다. uv는 파일 복사 방식으로 전환하며, 설치가 성공했다면 오류가 아니다.
 
+## uv 버전 확인과 업데이트
+
+**uv를 항상 최신 버전으로 바꿀 필요는 없다.** 정상적으로 작동한다면 그대로 사용해도 된다. 새로운 Python 버전 지원이나 버그 수정이 필요할 때 업데이트한다.
+
+**설치된 uv 버전 확인**
+
+```powershell
+uv --version
+```
+
+**Windows: winget으로 설치했다면**
+
+```powershell
+winget upgrade --id=astral-sh.uv -e
+```
+
+**공식 standalone 설치 프로그램으로 설치했다면**
+
+```powershell
+uv self update
+```
+
+업데이트한 뒤 새 PowerShell(또는 VS Code)을 열어 `uv --version`을 다시 확인한다. `winget` 설치본에는 `uv self update` 대신 **`winget upgrade`**를 사용한다.
+
+> `uv python upgrade`는 **uv 프로그램이 아니라 uv로 관리하는 Python 버전**을 업데이트하는 별도 명령이다.
+
 ## 확인 명령
 
 ~~~powershell

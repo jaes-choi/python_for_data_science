@@ -80,6 +80,10 @@ uv venv --python 3.11
 
 패키지 관리에는 프로젝트 정보를 함께 기록하는 **`uv add`를 권장**한다. `uv init`과 `uv add` 사용법은 [패키지 관리](02-packages.md)를 참고한다.
 
+**이미 Python이나 Anaconda를 설치했다면?** 삭제하지 않아도 된다. [기존 환경 사용 안내](01-install.md#기존-python이나-anaconda를-사용한다면)를 참고한다.
+
+**uv가 구버전이라면?** [업데이트 방법](04-troubleshooting.md#uv-버전-확인과-업데이트)을 참고한다.
+
 ## 자세히 보기
 
 - [01. Python·가상환경과 생성 파일](01-install.md)
