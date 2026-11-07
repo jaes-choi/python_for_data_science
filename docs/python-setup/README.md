@@ -1,6 +1,8 @@
 # Python 설치 및 실행환경 구성
 
-Windows 기준 실습 가이드. Python은 [python.org](https://www.python.org/downloads/)에서 설치할 수도 있지만, 여기서는 **uv**로 설치·관리한다.
+Windows 기준 실습 가이드. macOS/Linux는 [별도 설치 안내](05-macos-linux.md)를 참고한다.
+
+Python은 [python.org](https://www.python.org/downloads/)에서 설치할 수도 있지만, 여기서는 **uv**로 설치·관리한다.
 
 **uv**는 Windows·macOS·Linux에서 작동하는 빠른 Python 관리 도구다.
 
@@ -67,54 +69,13 @@ uv venv
 uv venv --python 3.11
 ~~~
 
-## macOS / Linux
-
-설치 명령과 Python 실행 파일 경로를 제외하면, `uv venv` 등 주요 uv 명령은 Windows와 같다.
-
-**uv 설치**
-
-```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
-```
-
-**설치 확인**
-
-```bash
-uv --version
-```
-
-**작업 폴더 생성**
-
-```bash
-mkdir python-study
-```
-
-**작업 폴더로 이동**
-
-```bash
-cd python-study
-```
-
-**가상환경 생성**
-
-```bash
-uv venv
-```
-
-**Python 버전 확인**
-
-```bash
-.venv/bin/python --version
-```
-
-> 📷 **화면 캡처 자리:** macOS/Linux에서 uv 설치 확인 및 Python 버전 출력
-
 ## 자세히 보기
 
-- [02. Python·가상환경과 생성 파일](02-install.md)
-- [03. 패키지 설치·관리](03-packages.md)
-- [04. 프로젝트 생성·환경 재현](04-projects.md)
-- [05. 자주 발생하는 오류](05-troubleshooting.md)
+- [01. Python·가상환경과 생성 파일](01-install.md)
+- [02. 패키지 설치·관리](02-packages.md)
+- [03. 프로젝트 생성·환경 재현](03-projects.md)
+- [04. 자주 발생하는 오류](04-troubleshooting.md)
+- [05. macOS / Linux 설치](05-macos-linux.md)
 
 **참고:** uv를 설치해도 Git은 함께 설치되지 않는다. Git·GitHub는 별도로 다룬다.
 

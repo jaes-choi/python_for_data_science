@@ -1,4 +1,4 @@
-# 03. 패키지 설치·관리
+# 02. 패키지 설치·관리
 
 외부 패키지는 **가상환경을 만든 폴더에서** 설치한다.
 
@@ -29,7 +29,7 @@ uv pip install "requests==2.32.3"
 uv pip uninstall requests
 ~~~
 
-`uv pip install`은 현재 가상환경에 패키지를 설치하지만, 프로젝트의 `pyproject.toml`이나 `uv.lock`을 자동 수정하지 않는다. 프로젝트 의존성은 [04. 프로젝트 관리](04-projects.md)의 `uv add`를 사용한다.
+`uv pip install`은 현재 가상환경에 패키지를 설치하지만, 프로젝트의 `pyproject.toml`이나 `uv.lock`을 자동 수정하지 않는다. 프로젝트 의존성은 [03. 프로젝트 관리](03-projects.md)의 `uv add`를 사용한다.
 
 ## Jupyter Notebook (선택)
 
@@ -50,4 +50,4 @@ A. 실행 중인 Python과 설치한 환경이 같은지 확인한다.
 uv pip show requests
 ~~~
 
-관련 문서: [가상환경](02-install.md) · [오류 해결](05-troubleshooting.md)
+관련 문서: [가상환경](01-install.md) · [오류 해결](04-troubleshooting.md)

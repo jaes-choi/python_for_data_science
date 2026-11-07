@@ -1,4 +1,4 @@
-# 02. Python과 가상환경
+# 01. Python과 가상환경
 
 ## 가상환경이란?
 
@@ -51,4 +51,4 @@ A. **Python: Select Interpreter**에서 `.venv\Scripts\python.exe`를 선택한�
 
 macOS/Linux 실행 파일: `.venv/bin/python`
 
-관련 문서: [README](README.md) · [패키지 관리](03-packages.md)
+관련 문서: [README](README.md) · [패키지 관리](02-packages.md)
