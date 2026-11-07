@@ -92,27 +92,7 @@ projects/
     └── .venv/
 ```
 
-Windows PowerShell에서 새 프로젝트 생성 예:
-
-```powershell
-mkdir projects
-```
-
-```powershell
-cd projects
-```
-
-```powershell
-uv init --no-package mini-game
-```
-
-```powershell
-cd mini-game
-```
-
-```powershell
-uv add requests
-```
+새 프로젝트를 실제로 만드는 명령과 파일 생성 과정은 [03. 프로젝트 생성과 환경 재현](03-projects.md)에 정리했다. 여기서는 **여러 프로젝트를 한 폴더 아래에 모아 두되 각자의 `.venv`를 분리하는 원칙**만 기억하면 된다.
 
 별도의 공용 `site-packages` 폴더에 여러 프로젝트를 섞어 설치하거나, 모든 프로젝트에 동일한 `.venv`를 공유하는 방식은 피한다.
 
@@ -151,30 +131,8 @@ uv cache prune
 
 반면 `uv cache clean`은 **전체 캐시를 지워** 이후 재다운로드와 재설치 비용이 커질 수 있으므로 일상적인 정리 용도로 권장하지 않는다.
 
-## Q7. GitHub에는 어떤 파일만 올리면 되나?
+GitHub에 올릴 파일과 `.gitignore`, `uv sync --locked`를 이용한 환경 재현 방법은 [03장](03-projects.md)에서 자세히 다룬다.
 
-**소스코드와 환경을 재현할 정보만** 올린다.
-
-- 포함: `.py`, `pyproject.toml`, `uv.lock`, `.python-version`, `README.md`
-- 제외: `.venv/`, `__pycache__/`, `.pytest_cache/`, `.ipynb_checkpoints/` 등 실행·임시 파일
-
-프로젝트의 `.gitignore`에 아래 내용이 있는지 확인한다.
-
-```gitignore
-.venv/
-__pycache__/
-.pytest_cache/
-.ipynb_checkpoints/
-```
-
-다른 컴퓨터에서는 소스와 설정 파일을 받은 뒤 다음 명령으로 가상환경을 다시 만든다.
-
-```powershell
-uv sync --locked
-```
-
-`--locked`는 `uv.lock`을 임의로 갱신하지 않도록 검사한다. 반면 `uv sync`는 잠금 파일이 현재 `pyproject.toml`과 맞지 않으면 갱신할 수 있다. 두 명령 모두 기본적으로 잠금 파일에 없는 불필요한 패키지를 제거한다.
-
-**정리:** Python과 캐시는 uv로 공통 관리, 가상환경은 프로젝트별 분리, GitHub에는 소스·설정만 보관한다.
+**정리:** Python과 캐시는 uv로 공통 관리하고, 실행환경인 `.venv`는 프로젝트별로 분리한다.
 
 공식 참고: [Python 버전 관리](https://docs.astral.sh/uv/concepts/python-versions/) · [저장 경로](https://docs.astral.sh/uv/reference/storage/) · [캐시 관리](https://docs.astral.sh/uv/concepts/cache/) · [프로젝트 관리](https://docs.astral.sh/uv/guides/projects/)

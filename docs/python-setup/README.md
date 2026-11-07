@@ -76,23 +76,17 @@ uv run python -c "print('Hello, Python!')"
 ![첫 Python 코드 실행 결과](images/05-hello-python.png)
 
 
-`uv venv`는 사용 가능한 Python을 활용하고, 없으면 자동으로 다운로드한다. 기본 가상환경은 `.venv` 폴더에 생성된다. **반드시 최신 Python을 선택하는 것은 아니다.** 프로젝트를 아직 만들지 않았더라도, 현재 폴더에 `.venv`가 있으면 `uv run`에서 사용할 수 있다.
+`uv venv`는 프로젝트 폴더의 `.venv`에 가상환경을 만든다. 이미 사용 가능한 Python을 활용하거나 필요하면 다운로드한다. **반드시 최신 Python을 고르는 것은 아니다.** 자세한 구조는 [01. Python과 가상환경](01-install.md)을 참고한다.
 
-특정 버전이 필요하면:
-
-~~~powershell
-uv venv --python 3.11
-~~~
-
-패키지 관리에는 프로젝트 정보를 함께 기록하는 **`uv add`를 권장**한다. `uv init`과 `uv add` 사용법은 [패키지 관리](02-packages.md)를 참고한다.
+이어서 패키지를 관리하려면 [02. 패키지 관리와 개발 도구](02-packages.md), 새 프로젝트를 만들고 다른 컴퓨터에서 재현하려면 [03. 프로젝트 생성과 환경 재현](03-projects.md)을 따라 한다.
 
 **기존 Python·Anaconda 정리, uv 업데이트, 디스크 용량과 폴더 관리**는 [고급 활용 Q&A](06-advanced.md)를 참고한다.
 
 ## 자세히 보기
 
 - [01. Python·가상환경과 생성 파일](01-install.md)
-- [02. 패키지 설치·관리](02-packages.md)
-- [03. 프로젝트 생성·환경 재현](03-projects.md)
+- [02. 패키지 관리와 개발 도구](02-packages.md)
+- [03. 프로젝트 생성과 환경 재현](03-projects.md)
 - [04. 자주 발생하는 오류](04-troubleshooting.md)
 - [05. macOS / Linux 설치](05-macos-linux.md)
 - [06. 고급 활용 Q&A — 기존 환경·용량·폴더 정리](06-advanced.md)
