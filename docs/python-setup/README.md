@@ -78,6 +78,8 @@ uv run python -c "print('Hello, Python!')"
 uv venv --python 3.11
 ~~~
 
+패키지 관리에는 프로젝트 정보를 함께 기록하는 **`uv add`를 권장**한다. `uv init`과 `uv add` 사용법은 [패키지 관리](02-packages.md)를 참고한다.
+
 ## 자세히 보기
 
 - [01. Python·가상환경과 생성 파일](01-install.md)

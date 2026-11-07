@@ -1,58 +1,92 @@
 # 02. 패키지 설치·관리
 
-외부 패키지는 **가상환경을 만든 폴더에서** 설치한다. 실행에는 `uv run`을 사용한다.
+**기본 권장: `uv add`** — 패키지를 설치하면서 프로젝트의 준비물 목록도 기록한다.
 
-## 기본 명령 (Windows PowerShell)
+## 패키지 추가 (Windows PowerShell)
 
-~~~powershell
-uv venv                           # 최초 1회: .venv 생성
-uv pip install requests           # 설치
-uv pip list                       # 설치 목록
-uv pip show requests              # 패키지 정보
-uv pip install --upgrade requests # 업데이트
-uv pip check                      # 의존성 충돌 검사
-~~~
+기존 `python-study` 폴더에서 프로젝트 설정을 만든다. (처음 1회)
 
-설치 후 바로 확인한다.
+```powershell
+uv init --no-package
+```
 
-~~~powershell
+`requests` 설치:
+
+```powershell
+uv add requests
+```
+
+![uv add로 패키지 설치하는 예](images/09-project-add.png)
+
+설치 확인:
+
+```powershell
 uv run python -c "import requests; print(requests.__version__)"
-~~~
+```
 
-![requests 패키지 설치 결과](images/06-install-requests.png)
+## 왜 uv add를 권장할까?
 
-![설치된 패키지 목록 확인](images/06b-pip-list.png)
+- `pyproject.toml`: 프로젝트에 **어떤 패키지가 필요한지** 기록
+- `uv.lock`: 실제로 사용할 **패키지 버전** 기록
+- 다른 컴퓨터에서 `uv sync`로 환경 재구성 가능
 
-> 캐시와 가상환경이 서로 다른 드라이브에 있으면 파일 링크 대신 복사로 전환된다는 경고가 나올 수 있다. 패키지 설치는 정상적으로 완료된다.
+```powershell
+uv sync
+```
 
-## `uv pip install`과 `uv add` 차이
+`pyproject.toml`과 `uv.lock`을 소스코드와 함께 GitHub에 올린다. `.venv`는 올리지 않는다.
 
-| 명령 | 역할 | 프로젝트 파일 |
-|---|---|---|
-| `uv pip install requests` | 현재 `.venv`에 설치 | 변경하지 않음 |
-| `uv add requests` | 프로젝트 의존성으로 추가·설치 | `pyproject.toml`, `uv.lock` 갱신 |
+## 관리 명령
 
-- **간단한 실습:** `uv venv` → `uv pip install`
-- **공유·재현할 프로젝트:** `uv init` → `uv add` → `uv sync`
+**패키지 추가**
 
-`uv add`는 uv 프로젝트가 필요하다. 프로젝트에서 `uv pip install`만 사용하면 의존성이 기록되지 않아 이후 `uv sync`에서 빠질 수 있다.
+```powershell
+uv add pandas
+```
 
-## 여러 패키지와 버전 지정
+**패키지 삭제**
 
-~~~powershell
-uv pip install requests pandas
-uv pip install "requests==2.32.3"
-uv pip uninstall requests
-~~~
+```powershell
+uv remove pandas
+```
 
-프로젝트 관리 방법은 [03. 프로젝트·환경 재현](03-projects.md)을 참고한다.
+**의존성 목록**
+
+```powershell
+uv tree
+```
+
+## `uv pip install`과의 차이
+
+| 명령 | 차이 |
+|---|---|
+| `uv add requests` | 설치 + **필요한 패키지 기록** (권장) |
+| `uv pip install requests` | 현재 `.venv`에만 설치, 프로젝트 설정에는 기록하지 않음 |
+
+단순한 일회성 실습에서는 `uv venv`를 만든 뒤 `uv pip install`을 사용할 수도 있다.
+
+```powershell
+uv pip install requests
+```
+
+![uv pip install 설치 예](images/06-install-requests.png)
+
+```powershell
+uv pip list
+```
+
+![설치된 패키지 목록](images/06b-pip-list.png)
+
+> 캐시와 가상환경이 다른 드라이브에 있으면 파일 링크 대신 복사로 전환된다는 경고가 나올 수 있다. 설치가 성공했다면 오류가 아니다.
+
+주의: `uv pip install`만으로 추가한 패키지는 `uv sync`에서 유지된다고 보장할 수 없다.
 
 ## Jupyter Notebook (선택)
 
 **설치**
 
 ```powershell
-uv pip install notebook ipykernel
+uv add notebook ipykernel
 ```
 
 **실행**
@@ -88,11 +122,11 @@ uv run hello.py
 **Python: Select Interpreter**에서 `.venv`를 선택한다. `code` 명령이 인식되지 않으면 VS Code의 **파일 → 폴더 열기**를 사용한다.
 
 **Q. 설치했는데 `import`가 실패한다면?**  
-A. 실행 중인 Python과 설치한 환경이 같은지 확인한다.
+A. 실행 중인 Python과 설치한 환경이 같은지 확인하고, 프로젝트에서는 `uv add`로 설치했는지 점검한다.
 
 ~~~powershell
 uv run python -c "import sys; print(sys.executable)"
-uv pip show requests
+uv tree
 ~~~
 
 관련 문서: [가상환경](01-install.md) · [오류 해결](04-troubleshooting.md)
