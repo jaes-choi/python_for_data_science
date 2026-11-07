@@ -10,7 +10,7 @@
 mkdir python-study
 cd python-study
 uv venv
-.\.venv\Scripts\python.exe --version
+uv run python --version
 ~~~
 
 - `uv venv`: 사용 가능한 Python을 선택한다. 없으면 자동 다운로드한다.
@@ -35,20 +35,20 @@ python-study/
 
 ~~~powershell
 Get-ChildItem -Force .venv
-.\.venv\Scripts\python.exe -c "import sys; print(sys.executable)"
+uv run python -c "import sys; print(sys.executable)"
 ~~~
 
 > 📷 **화면 캡처 자리:** 파일 탐색기에서 `.venv` 폴더와 `pyvenv.cfg` 확인
 
 **Q. 가상환경을 활성화해야 하나?**  
-A. 필수는 아니다. uv는 현재 폴더의 `.venv`를 찾아 사용하며, Python 실행 파일을 직접 지정해도 된다.
+A. 필수는 아니다. `uv run python`으로 실행한다.
 
 **Q. `python` 명령이 다른 버전을 실행한다면?**  
-A. `.\.venv\Scripts\python.exe`를 사용하면 해당 프로젝트의 Python을 실행한다.
+A. `uv run python`을 사용한다. 실제 실행 경로는 `uv run python -c "import sys; print(sys.executable)"`로 확인한다.
 
 **Q. VS Code에서는?**  
 A. **Python: Select Interpreter**에서 `.venv\Scripts\python.exe`를 선택한다.
 
-macOS/Linux 실행 파일: `.venv/bin/python`
+macOS/Linux에서도 `uv run python`을 사용한다. 실제 실행 파일 경로는 `.venv/bin/python`이다.
 
 관련 문서: [README](README.md) · [패키지 관리](02-packages.md)

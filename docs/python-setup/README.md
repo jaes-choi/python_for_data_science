@@ -50,18 +50,18 @@ uv venv
 **6. Python 버전 확인**
 
 ```powershell
-.\.venv\Scripts\python.exe --version
+uv run python --version
 ```
 
 **7. Python 실행 확인**
 
 ```powershell
-.\.venv\Scripts\python.exe -c "print('Hello, Python!')"
+uv run python -c "print('Hello, Python!')"
 ```
 
 > 📷 **화면 캡처 자리:** PowerShell에서 `uv --version`, `uv venv`, `Hello, Python!` 실행 결과
 
-`uv venv`는 사용 가능한 Python을 활용하고, 없으면 자동으로 다운로드한다. 기본 가상환경은 `.venv` 폴더에 생성된다. **반드시 최신 Python을 선택하는 것은 아니다.**
+`uv venv`는 사용 가능한 Python을 활용하고, 없으면 자동으로 다운로드한다. 기본 가상환경은 `.venv` 폴더에 생성된다. **반드시 최신 Python을 선택하는 것은 아니다.** `uv run`은 이 가상환경에서 Python을 실행한다.
 
 특정 버전이 필요하면:
 

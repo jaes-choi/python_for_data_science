@@ -1,6 +1,6 @@
 # 02. 패키지 설치·관리
 
-외부 패키지는 **가상환경을 만든 폴더에서** 설치한다.
+외부 패키지는 **가상환경을 만든 폴더에서** 설치한다. 실행에는 `uv run`을 사용한다.
 
 ## 기본 명령 (Windows PowerShell)
 
@@ -16,7 +16,7 @@ uv pip check                      # 의존성 충돌 검사
 설치 후 바로 확인한다.
 
 ~~~powershell
-.\.venv\Scripts\python.exe -c "import requests; print(requests.__version__)"
+uv run python -c "import requests; print(requests.__version__)"
 ~~~
 
 > 📷 **화면 캡처 자리:** `uv pip install requests`와 `uv pip list` 실행 결과
@@ -35,7 +35,7 @@ uv pip uninstall requests
 
 ~~~powershell
 uv pip install notebook ipykernel
-.\.venv\Scripts\jupyter.exe notebook
+uv run jupyter notebook
 ~~~
 
 > 📷 **화면 캡처 자리:** 브라우저에서 실행된 Jupyter Notebook 첫 화면
@@ -46,7 +46,7 @@ VS Code의 Notebook에서는 커널을 선택할 때 해당 `.venv` Python을 �
 A. 실행 중인 Python과 설치한 환경이 같은지 확인한다.
 
 ~~~powershell
-.\.venv\Scripts\python.exe -c "import sys; print(sys.executable)"
+uv run python -c "import sys; print(sys.executable)"
 uv pip show requests
 ~~~
 

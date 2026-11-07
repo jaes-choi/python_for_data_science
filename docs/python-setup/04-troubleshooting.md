@@ -6,20 +6,20 @@ Windows PowerShell 기준. **오류 메시지를 먼저 읽고, 설치 경로와
 |---|---|
 | `uv` 명령을 찾을 수 없음 | 설치 후 **새 PowerShell**을 열고 `uv --version` 확인 |
 | `winget` 명령이 없음 | Windows App Installer 확인 또는 [uv 공식 설치 방법](https://docs.astral.sh/uv/getting-started/installation/) 사용 |
-| `python`이 실행되지 않음 | `.\.venv\Scripts\python.exe --version`으로 확인 |
+| `python`이 실행되지 않음 | `uv run python --version`으로 확인 |
 | `ModuleNotFoundError` | `uv pip list`와 `sys.executable`로 환경 확인 |
 | 특정 Python 버전이 필요함 | `uv venv --python 3.11`로 새 환경 생성 |
 | 패키지 설치 실패 | 네트워크, 패키지 이름, 지원 Python 버전 확인 |
 | VS Code에서 import 오류 | **Python: Select Interpreter**에서 `.venv` 선택 |
-| PowerShell 활성화 스크립트 오류 | 활성화 없이 `.\.venv\Scripts\python.exe` 사용 |
+| PowerShell 활성화 스크립트 오류 | 활성화 없이 `uv run python` 사용 |
 
 ## 확인 명령
 
 ~~~powershell
 uv --version
 uv python list
-.\.venv\Scripts\python.exe --version
-.\.venv\Scripts\python.exe -c "import sys; print(sys.executable)"
+uv run python --version
+uv run python -c "import sys; print(sys.executable)"
 uv pip list
 uv pip check
 ~~~
@@ -30,7 +30,7 @@ uv pip check
 
 ~~~powershell
 uv pip install requests
-.\.venv\Scripts\python.exe -c "import requests; print(requests.__version__)"
+uv run python -c "import requests; print(requests.__version__)"
 ~~~
 
 명령을 실행한 폴더에 `.venv`가 있는지 먼저 확인한다.
