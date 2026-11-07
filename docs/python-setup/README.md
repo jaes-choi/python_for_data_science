@@ -80,9 +80,7 @@ uv venv --python 3.11
 
 패키지 관리에는 프로젝트 정보를 함께 기록하는 **`uv add`를 권장**한다. `uv init`과 `uv add` 사용법은 [패키지 관리](02-packages.md)를 참고한다.
 
-**이미 Python이나 Anaconda를 설치했다면?** 삭제하지 않아도 된다. [기존 환경 사용 안내](01-install.md#기존-python이나-anaconda를-사용한다면)를 참고한다.
-
-**uv가 구버전이라면?** [업데이트 방법](04-troubleshooting.md#uv-버전-확인과-업데이트)을 참고한다.
+**기존 Python·Anaconda 정리, uv 업데이트, 디스크 용량과 폴더 관리**는 [고급 활용 Q&A](06-advanced.md)를 참고한다.
 
 ## 자세히 보기
 
@@ -91,6 +89,7 @@ uv venv --python 3.11
 - [03. 프로젝트 생성·환경 재현](03-projects.md)
 - [04. 자주 발생하는 오류](04-troubleshooting.md)
 - [05. macOS / Linux 설치](05-macos-linux.md)
+- [06. 고급 활용 Q&A — 기존 환경·용량·폴더 정리](06-advanced.md)
 
 **참고:** uv를 설치해도 Git은 함께 설치되지 않는다. Git·GitHub는 별도로 다룬다.
 

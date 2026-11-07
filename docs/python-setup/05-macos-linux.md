@@ -48,21 +48,7 @@ uv run python -c "print('Hello, Python!')"
 
 기본 가상환경은 `.venv`에 생성된다. `uv run python`으로 실행할 수 있으며 macOS/Linux의 실행 파일 경로는 `.venv/bin/python`이다. 특정 Python 버전이 필요하면 `uv venv --python 3.11`처럼 지정한다.
 
-## uv 업데이트
-
-공식 설치 스크립트(`curl ... | sh`)로 설치했다면:
-
-```bash
-uv self update
-```
-
-Homebrew로 설치했다면:
-
-```bash
-brew upgrade uv
-```
-
-문제없이 작동하면 매번 업데이트할 필요는 없다.
+uv 버전 업데이트와 저장 공간 관리 방법은 [고급 활용 Q&A](06-advanced.md)를 참고한다.
 
 [Windows 설치 안내로 돌아가기](README.md) · [가상환경 구조](01-install.md)
 

@@ -47,6 +47,8 @@ uv sync
 
 ![uv run main.py 실행 결과](images/10-project-run.png)
 
+프로젝트가 많아졌을 때 폴더 구조와 디스크 공간 관리 방법은 [고급 활용 Q&A](06-advanced.md#q4-프로젝트를-만들-때-폴더는-어떻게-구성하면-좋을까)를 참고한다.
+
 ## 다른 컴퓨터에서 재현하기
 
 GitHub에 `pyproject.toml`, `uv.lock`, `.python-version`, 소스코드를 저장한다. `.venv/`는 업로드하지 않는다.
