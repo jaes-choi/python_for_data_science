@@ -15,6 +15,12 @@ Python은 [python.org](https://www.python.org/downloads/)에서 설치할 수도
 | OS 공통 사용 | 한번 배우면 Windows·macOS·Linux에서 동일한 uv 명령 활용 |
 | AI 협업 | 설치·실행·오류 확인 절차를 명령어로 공유 |
 
+### 잠깐! 왜 이름이 uv일까?
+
+**uv는 *Ultraviolet*(자외선)에서 따온 이름**이다. 개발자 Charlie Marsh는 두 글자라 **짧고 입력하기 쉬우며**, 별·천체를 연상시키는 회사 이름 *Astral*과도 어울린다고 설명했다. 명령어를 자주 입력하는 개발자를 생각한 이름이다.
+
+출처: [Charlie Marsh 인터뷰, *Test & Code* 216회 (2024년 3월 11일)](https://pythontest.com/testandcode/episodes/ruff-astral-uv-charlie-marsh/)
+
 ## Windows에서 시작하기 (PowerShell)
 
 **1. uv 설치**
