@@ -6,12 +6,33 @@
 
 ## 만들고 확인하기 (Windows PowerShell)
 
-~~~powershell
-mkdir python-study
-cd python-study
-uv venv
+앞의 [Quick Tour](README.md)에서 `python-study` 폴더와 `.venv`를 이미 만들었다면 **다시 만들 필요가 없다.**
+
+아래에서 `#`으로 시작하는 명령은 **이미 실행한 단계이므로 주석 처리한 것**이다. 아직 실행하지 않은 단계에 한해 `#`을 지우고 실행한다.
+
+**① `python-study` 폴더가 없다면**
+
+```powershell
+# mkdir python-study
+```
+
+**② 아직 `python-study` 폴더 안에 있지 않다면**
+
+```powershell
+# cd python-study
+```
+
+**③ 이 폴더에 `.venv`가 없다면**
+
+```powershell
+# uv venv
+```
+
+**④ Python 버전 확인 (실행)**
+
+```powershell
 uv run python --version
-~~~
+```
 
 - `uv venv`: 사용 가능한 Python을 선택한다. 없으면 자동 다운로드한다.
 - `uv venv --python 3.11`: 특정 버전 지정
