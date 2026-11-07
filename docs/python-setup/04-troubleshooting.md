@@ -5,6 +5,7 @@ Windows PowerShell 기준. **오류 메시지를 먼저 읽고, 설치 경로와
 | 증상 | 확인·해결 |
 |---|---|
 | `uv` 명령을 찾을 수 없음 | 설치 후 **새 PowerShell**을 열고 `uv --version` 확인 |
+| VS Code 터미널에서 `uv` 명령을 찾지 못함 | uv 설치 후 **VS Code를 완전히 종료·재실행**하고 다시 확인 |
 | `winget` 명령이 없음 | Windows App Installer 확인 또는 [uv 공식 설치 방법](https://docs.astral.sh/uv/getting-started/installation/) 사용 |
 | `python`이 실행되지 않음 | `uv run python --version`으로 확인 |
 | `ModuleNotFoundError` | `uv pip list`와 `sys.executable`로 환경 확인 |
