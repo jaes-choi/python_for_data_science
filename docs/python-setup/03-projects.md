@@ -39,7 +39,7 @@ uv run main.py
 uv sync
 ~~~
 
-- `uv add`: `pyproject.toml`과 `uv.lock`에 의존성 반영
+- `uv add`: `pyproject.toml`과 `uv.lock`에 의존성 반영 ([`uv pip install`과 차이](02-packages.md))
 - `uv run`: 필요한 환경을 동기화한 뒤 실행
 - `uv sync`: 프로젝트 설정에 맞춰 `.venv` 재구성
 
