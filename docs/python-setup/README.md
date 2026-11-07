@@ -76,7 +76,7 @@ uv run python -c "print('Hello, Python!')"
 ![첫 Python 코드 실행 결과](images/05-hello-python.png)
 
 
-`uv venv`는 사용 가능한 Python을 활용하고, 없으면 자동으로 다운로드한다. 기본 가상환경은 `.venv` 폴더에 생성된다. **반드시 최신 Python을 선택하는 것은 아니다.** `uv run`은 이 가상환경에서 Python을 실행한다.
+`uv venv`는 사용 가능한 Python을 활용하고, 없으면 자동으로 다운로드한다. 기본 가상환경은 `.venv` 폴더에 생성된다. **반드시 최신 Python을 선택하는 것은 아니다.** 프로젝트를 아직 만들지 않았더라도, 현재 폴더에 `.venv`가 있으면 `uv run`에서 사용할 수 있다.
 
 특정 버전이 필요하면:
 

@@ -4,12 +4,29 @@
 
 ## 프로젝트 만들기 (Windows PowerShell)
 
-~~~powershell
+**새 프로젝트 생성**
+
+```powershell
 uv init --no-package hello-uv
+```
+
+**프로젝트 폴더로 이동**
+
+```powershell
 cd hello-uv
+```
+
+**필요한 패키지 기록·설치**
+
+```powershell
 uv add requests
+```
+
+**프로그램 실행**
+
+```powershell
 uv run main.py
-~~~
+```
 
 `--no-package`는 입문자가 보기 쉬운 `main.py` 중심 구조를 만든다. 일반 `uv init`의 기본 템플릿은 uv 버전에 따라 다를 수 있다.
 
@@ -32,16 +49,33 @@ Git이 설치되어 있고 버전 관리가 초기화되었다면 `.git/`도 존
 
 ## 패키지 추가·삭제 및 실행
 
-~~~powershell
+**패키지 추가**
+
+```powershell
 uv add requests
+```
+
+**패키지 제거**
+
+```powershell
 uv remove requests
+```
+
+**프로그램 실행**
+
+```powershell
 uv run main.py
+```
+
+**프로젝트 환경 동기화**
+
+```powershell
 uv sync
-~~~
+```
 
 - `uv add`: `pyproject.toml`과 `uv.lock`에 의존성 반영 ([`uv pip install`과 차이](02-packages.md))
 - `uv run`: 필요한 환경을 동기화한 뒤 실행
-- `uv sync`: 프로젝트 설정에 맞춰 `.venv` 재구성
+- `uv sync`: 프로젝트 설정에 맞춰 `.venv` 동기화. 기본적으로 **`uv.lock`에 없는 패키지는 제거**
 
 ![uv add requests 실행 결과](images/09-project-add.png)
 
@@ -53,12 +87,31 @@ uv sync
 
 GitHub에 `pyproject.toml`, `uv.lock`, `.python-version`, 소스코드를 저장한다. `.venv/`는 업로드하지 않는다.
 
-~~~powershell
+**GitHub 저장소 복제** (아래 주소는 예시이므로 실제 주소로 바꾼다)
+
+```powershell
 git clone https://github.com/사용자명/저장소명.git
+```
+
+**폴더로 이동**
+
+```powershell
 cd 저장소명
-uv sync
+```
+
+**저장된 잠금 파일을 변경하지 않고 환경 재현**
+
+```powershell
+uv sync --locked
+```
+
+**실행**
+
+```powershell
 uv run main.py
-~~~
+```
+
+`uv sync`는 필요하면 `uv.lock`을 갱신하지만, `--locked`는 설정과 잠금 파일이 맞지 않을 때 오류를 발생시켜 **의도치 않은 잠금 파일 변경을 막는다**. OS·Python 버전에 따라 실제 설치 파일은 달라질 수 있으므로 호환성을 확인한다. [공식 문서](https://docs.astral.sh/uv/concepts/projects/sync/)
 
 > 📷 **화면 캡처 자리:** 다른 컴퓨터에서 `uv sync` 성공 및 `uv run` 출력
 

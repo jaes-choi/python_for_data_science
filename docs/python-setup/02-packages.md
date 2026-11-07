@@ -79,23 +79,35 @@ uv pip list
 
 > 캐시와 가상환경이 다른 드라이브에 있으면 파일 링크 대신 복사로 전환된다는 경고가 나올 수 있다. 설치가 성공했다면 오류가 아니다.
 
-주의: `uv pip install`만으로 추가한 패키지는 `uv sync`에서 유지된다고 보장할 수 없다.
+**중요:** `uv pip install`만으로 추가한 패키지는 프로젝트 의존성에 기록되지 않는다. `uv sync`는 기본적으로 **잠금 파일에 없는 패키지를 제거**할 수 있다. 실습 후 계속 사용할 패키지는 `uv add`로 기록한다. [uv 공식 동기화 설명](https://docs.astral.sh/uv/concepts/projects/sync/) 참고.
 
 ## Jupyter Notebook (선택)
 
-**설치**
+Jupyter는 Python 입문 필수 프로그램이 아니다. **필요할 때만** 사용하면 설치·프로젝트 의존성을 줄일 수 있다.
+
+**가끔 사용한다면 — JupyterLab을 프로젝트 의존성에 추가하지 않고 실행 (공식 권장 예시)**
 
 ```powershell
-uv add notebook ipykernel
+uv run --with jupyter jupyter lab
 ```
 
-**실행**
+이 방식은 Jupyter 실행에 필요한 환경을 별도로 준비한다. 패키지는 uv 캐시에 저장될 수 있지만 프로젝트의 `pyproject.toml`에는 추가하지 않는다.
+
+**Notebook 화면을 프로젝트에서 계속 사용한다면**
+
+```powershell
+uv add --dev notebook ipykernel
+```
 
 ```powershell
 uv run jupyter notebook
 ```
 
+`--dev`는 Jupyter 같은 개발·학습용 도구를 일반 실행 의존성과 구분해 기록한다. 아래는 실제 브라우저에서 실행한 Notebook 화면이다.
+
 ![Jupyter Notebook 실행 및 코드 출력](images/11-jupyter-notebook.png)
+
+VS Code에서 `.ipynb` 노트북을 실행할 때는 프로젝트에 `ipykernel`이 필요하다. **Python: Select Interpreter/Select Kernel**에서 프로젝트의 `.venv`를 선택한다. [uv 공식 Jupyter 안내](https://docs.astral.sh/uv/guides/integration/jupyter/) 참고.
 
 ## VS Code에서 Python 실행 (선택)
 
