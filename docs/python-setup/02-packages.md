@@ -56,6 +56,51 @@ uv remove pandas
 uv tree
 ```
 
+## `--dev`는 무엇일까?
+
+`--dev`는 **개발·학습할 때만 필요한 도구를 따로 분류해 기록**하는 옵션이다. **설치를 생략하는 옵션은 아니다.**
+
+| 명령 | 용도 |
+|---|---|
+| `uv add requests` | 프로그램 실행에 필요한 패키지 |
+| `uv add --dev ipykernel` | VS Code Notebook을 실행하는 개발·학습용 도구 |
+
+**프로그램에 필요한 패키지 추가**
+
+```powershell
+uv add requests
+```
+
+**개발용 도구 추가**
+
+```powershell
+uv add --dev ipykernel
+```
+
+`pyproject.toml`에는 두 종류가 나뉘어 기록된다. (아래는 구조를 보여주는 예시다.)
+
+```toml
+[project]
+dependencies = ["requests"]
+
+[dependency-groups]
+dev = ["ipykernel"]
+```
+
+일반적으로 `uv sync`는 **개발용 패키지도 함께 설치**한다.
+
+```powershell
+uv sync
+```
+
+개발용 도구가 필요 없는 환경에서는 제외할 수 있다.
+
+```powershell
+uv sync --no-dev
+```
+
+즉, `--dev`의 목적은 **설치 여부가 아니라 패키지의 용도를 구분하는 것**이다.
+
 ## `uv pip install`과의 차이
 
 | 명령 | 차이 |
