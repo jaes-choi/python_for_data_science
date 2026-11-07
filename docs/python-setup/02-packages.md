@@ -4,7 +4,7 @@
 
 ## 패키지 추가 (Windows PowerShell)
 
-기존 `python-study` 폴더에서 프로젝트 설정을 만든다. (처음 1회)
+기존 `python-study` 폴더에서 프로젝트 설정을 만든다. (처음 1회) 앞의 Quick Tour에서 이미 `uv venv`를 실행했다면 **다시 실행하지 않는다.** `uv init`은 이 폴더에 프로젝트 설정을 추가하는 단계다.
 
 ```powershell
 uv init --no-package
