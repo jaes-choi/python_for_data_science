@@ -10,28 +10,52 @@ Windows 기준 실습 가이드. Python은 [python.org](https://www.python.org/d
 | 자동 설치 | 필요한 Python 버전이 없으면 다운로드 |
 | 여러 버전 | 프로젝트마다 다른 Python 환경 사용 |
 | 빠른 속도 | 패키지 설치와 캐시 재사용 |
+| OS 공통 사용 | 한번 배우면 Windows·macOS·Linux에서 동일한 uv 명령 활용 |
 | AI 협업 | 설치·실행·오류 확인 절차를 명령어로 공유 |
 
 ## Windows에서 시작하기 (PowerShell)
 
-~~~powershell
-# 1. uv 설치
+**1. uv 설치**
+
+```powershell
 winget install --id=astral-sh.uv -e
+```
 
-# 2. PowerShell을 새로 열어 확인
+**2. 새 PowerShell에서 설치 확인**
+
+```powershell
 uv --version
+```
 
-# 3. 작업 폴더 생성
+**3. 작업 폴더 생성**
+
+```powershell
 mkdir python-study
+```
+
+**4. 작업 폴더로 이동**
+
+```powershell
 cd python-study
+```
 
-# 4. Python 가상환경 생성
+**5. Python 가상환경 생성**
+
+```powershell
 uv venv
+```
 
-# 5. Python 실행 확인
+**6. Python 버전 확인**
+
+```powershell
 .\.venv\Scripts\python.exe --version
+```
+
+**7. Python 실행 확인**
+
+```powershell
 .\.venv\Scripts\python.exe -c "print('Hello, Python!')"
-~~~
+```
 
 > 📷 **화면 캡처 자리:** PowerShell에서 `uv --version`, `uv venv`, `Hello, Python!` 실행 결과
 
@@ -45,13 +69,43 @@ uv venv --python 3.11
 
 ## macOS / Linux
 
-~~~bash
+설치 명령과 Python 실행 파일 경로를 제외하면, `uv venv` 등 주요 uv 명령은 Windows와 같다.
+
+**uv 설치**
+
+```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+**설치 확인**
+
+```bash
 uv --version
-mkdir python-study && cd python-study
+```
+
+**작업 폴더 생성**
+
+```bash
+mkdir python-study
+```
+
+**작업 폴더로 이동**
+
+```bash
+cd python-study
+```
+
+**가상환경 생성**
+
+```bash
 uv venv
+```
+
+**Python 버전 확인**
+
+```bash
 .venv/bin/python --version
-~~~
+```
 
 > 📷 **화면 캡처 자리:** macOS/Linux에서 uv 설치 확인 및 Python 버전 출력
 
