@@ -13,6 +13,8 @@ Windows PowerShell 기준. **오류 메시지를 먼저 읽고, 설치 경로와
 | VS Code에서 import 오류 | **Python: Select Interpreter**에서 `.venv` 선택 |
 | PowerShell 활성화 스크립트 오류 | 활성화 없이 `uv run python` 사용 |
 
+**참고:** `Failed to hardlink files` 경고는 캐시와 가상환경이 다른 드라이브에 있을 때 발생할 수 있다. uv는 파일 복사 방식으로 전환하며, 설치가 성공했다면 오류가 아니다.
+
 ## 확인 명령
 
 ~~~powershell

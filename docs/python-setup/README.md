@@ -1,4 +1,4 @@
-# Python 설치 및 실행환경 구성
+# Python 개발환경 Quick Tour — uv로 시작하기
 
 Windows 기준 실습 가이드. macOS/Linux는 [별도 설치 안내](05-macos-linux.md)를 참고한다.
 
@@ -23,11 +23,15 @@ Python은 [python.org](https://www.python.org/downloads/)에서 설치할 수도
 winget install --id=astral-sh.uv -e
 ```
 
+![Windows에서 winget으로 uv 설치 완료](images/01-winget-install.png)
+
 **2. 새 PowerShell에서 설치 확인**
 
 ```powershell
 uv --version
 ```
+
+![uv 버전 확인 결과](images/02-uv-version.png)
 
 **3. 작업 폴더 생성**
 
@@ -47,11 +51,15 @@ cd python-study
 uv venv
 ```
 
+![uv 가상환경 생성 결과](images/03-venv-create.png)
+
 **6. Python 버전 확인**
 
 ```powershell
 uv run python --version
 ```
+
+![Python 버전 확인 결과](images/04-python-version.png)
 
 **7. Python 실행 확인**
 
@@ -59,7 +67,8 @@ uv run python --version
 uv run python -c "print('Hello, Python!')"
 ```
 
-> 📷 **화면 캡처 자리:** PowerShell에서 `uv --version`, `uv venv`, `Hello, Python!` 실행 결과
+![첫 Python 코드 실행 결과](images/05-hello-python.png)
+
 
 `uv venv`는 사용 가능한 Python을 활용하고, 없으면 자동으로 다운로드한다. 기본 가상환경은 `.venv` 폴더에 생성된다. **반드시 최신 Python을 선택하는 것은 아니다.** `uv run`은 이 가상환경에서 Python을 실행한다.
 

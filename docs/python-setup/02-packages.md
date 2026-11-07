@@ -19,7 +19,9 @@ uv pip check                      # 의존성 충돌 검사
 uv run python -c "import requests; print(requests.__version__)"
 ~~~
 
-> 📷 **화면 캡처 자리:** `uv pip install requests`와 `uv pip list` 실행 결과
+![requests 설치 및 uv pip list 결과](images/06-install-requests.png)
+
+> 캐시와 가상환경이 서로 다른 드라이브에 있으면 파일 링크 대신 복사로 전환된다는 경고가 나올 수 있다. 패키지 설치는 정상적으로 완료된다.
 
 ## 여러 패키지와 버전 지정
 

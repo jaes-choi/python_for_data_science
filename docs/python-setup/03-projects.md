@@ -13,7 +13,7 @@ uv run main.py
 
 `--no-package`는 입문자가 보기 쉬운 `main.py` 중심 구조를 만든다. 일반 `uv init`의 기본 템플릿은 uv 버전에 따라 다를 수 있다.
 
-> 📷 **화면 캡처 자리:** `uv init` 실행 결과와 생성된 프로젝트 폴더
+![uv init 프로젝트 생성 결과](images/08-project-init.png)
 
 ## 중요한 파일
 
@@ -42,6 +42,10 @@ uv sync
 - `uv add`: `pyproject.toml`과 `uv.lock`에 의존성 반영
 - `uv run`: 필요한 환경을 동기화한 뒤 실행
 - `uv sync`: 프로젝트 설정에 맞춰 `.venv` 재구성
+
+![uv add requests 실행 결과](images/09-project-add.png)
+
+![uv run main.py 실행 결과](images/10-project-run.png)
 
 ## 다른 컴퓨터에서 재현하기
 

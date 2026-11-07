@@ -17,7 +17,9 @@ uv run python --version
 - `uv venv --python 3.11`: 특정 버전 지정
 - `uv python list`: 사용 가능한 Python 버전 확인
 
-> 📷 **화면 캡처 자리:** `uv venv` 생성 메시지와 Python 버전 출력
+![가상환경 생성](images/03-venv-create.png)
+
+![Python 버전 확인](images/04-python-version.png)
 
 ## .venv 안에는 무엇이 있나?
 
@@ -38,7 +40,7 @@ Get-ChildItem -Force .venv
 uv run python -c "import sys; print(sys.executable)"
 ~~~
 
-> 📷 **화면 캡처 자리:** 파일 탐색기에서 `.venv` 폴더와 `pyvenv.cfg` 확인
+![PowerShell에서 확인한 실제 .venv 파일 목록](images/07-venv-files.png)
 
 **Q. 가상환경을 활성화해야 하나?**  
 A. 필수는 아니다. `uv run python`으로 실행한다.
