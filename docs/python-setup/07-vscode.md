@@ -64,19 +64,29 @@ uv add --dev ipykernel
 
 1. VS Code에서 `Ctrl+Shift+P`를 누른다.
 2. `Create: New Jupyter Notebook`을 입력해 실행하거나 `hello.ipynb` 파일을 만든다.
-3. Notebook 오른쪽 위의 **Select Kernel**을 누른다.
-4. **Python Environments**에서 `python-study\.venv\Scripts\python.exe`를 선택한다. 바로 보이지 않으면 **Select Another Kernel**에서 찾는다.
+3. Notebook 오른쪽 위의 **Select Kernel**을 누르고 **Python Environments**를 고른다.
+
+   ![실제 Select Kernel 메뉴에서 Python Environments 선택](images/13-vscode-kernel-source.png)
+
+4. Python 환경 목록에서 **`python-study\.venv\Scripts\python.exe`**를 고른다. 다른 Python이 여러 개 있어도 경로가 현재 프로젝트의 `.venv`인지 확인한다.
+
+   ![Recommended로 표시된 프로젝트 가상환경의 Python 커널 선택](images/14-vscode-kernel-python-env.png)
+
 5. 셀에 코드를 넣은 뒤 ▶ 버튼을 눌러 실행한다.
 
 ```python
-print("Hello from VS Code Notebook!")
+print("Hello, Python!")
 ```
 
 출력이 나타나면 Notebook 실행에 성공한 것이다.
 
 ```text
-Hello from VS Code Notebook!
+Hello, Python!
 ```
+
+두 번째 셀에서 `2 + 3`을 실행하면 `5`가 출력된다. 아래 화면은 **실제 VS Code에서 두 셀을 실행한 결과**다.
+
+![VS Code Notebook의 실행 결과 Hello Python과 계산 결과 5](images/15-vscode-notebook-run.png)
 
 파일은 `Ctrl+S`로 `.ipynb` 확장자로 저장한다.
 

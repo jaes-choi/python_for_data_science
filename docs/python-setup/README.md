@@ -121,8 +121,14 @@ VS Code가 열리면 왼쪽 탐색기에서 현재 폴더가 `python-study`인�
 
 1. VS Code에서 **`Ctrl+Shift+P`**를 누른다.
 2. **`Create: New Jupyter Notebook`**을 찾아 실행한다. 또는 새 파일 `hello.ipynb`를 만든다.
-3. 오른쪽 위 **Select Kernel**을 누른다.
-4. **Python Environments**에서 현재 프로젝트의 **`.venv\Scripts\python.exe`**를 선택한다. 메뉴 구성이 다르면 **Select Another Kernel**을 통해 찾는다.
+3. 오른쪽 위 **Select Kernel**을 누른다. 목록에서 **Python Environments**를 선택한다.
+
+   ![실제 VS Code의 Select Kernel 메뉴에서 Python Environments 선택](images/13-vscode-kernel-source.png)
+
+4. Python 목록에서 현재 프로젝트의 **`.venv\Scripts\python.exe`**를 선택한다. 다른 Python 버전이 여러 개 보여도 **프로젝트 이름과 `.venv` 경로**를 확인한다. 이 실습 화면에서는 **Recommended**로 표시되었다.
+
+   ![VS Code의 Python 환경 목록에서 python-study 프로젝트의 .venv 커널 선택](images/14-vscode-kernel-python-env.png)
+
 5. 첫 번째 코드 셀에 다음 코드를 입력하고, 셀 왼쪽의 **▶ Run**을 누른다.
 
 ```python
@@ -144,6 +150,8 @@ Hello, Python!
 ```text
 5
 ```
+
+![실제 VS Code Notebook에서 프로젝트 Python 커널을 연결하고 두 셀을 실행한 결과](images/15-vscode-notebook-run.png)
 
 **`Ctrl+S`로 노트북을 `hello.ipynb`로 저장**한다. 이제 설치부터 첫 실행까지 끝났다.
 
