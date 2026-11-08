@@ -8,7 +8,7 @@ Windows PowerShell 기준. **같은 명령을 반복 설치하기 전에 오류 
 |---|---|
 | PowerShell에서 `uv`를 찾지 못함 | 설치 후 새 PowerShell을 연다. 그래도 안 되면 설치·PATH 확인 |
 | VS Code 터미널에서 `uv`를 찾지 못함 | uv 설치 후 **VS Code를 완전히 종료하고 다시 연다** |
-| `winget`이 없음 | 일반 Windows에서는 **App Installer** 확인. **Windows Sandbox에는 `winget`이 기본 포함되지 않으므로** [Quick Tour의 공식 스크립트 설치 방법](README.md#windows에서-시작하기-powershell) 이용 |
+| `winget`이 없음 | 일반 Windows에서는 **App Installer** 확인. Windows Sandbox에서는 [Quick Tour의 공식 uv 설치 대안](README.md#1-uv-설치) 이용. VS Code는 [공식 다운로드](07-vscode.md#1-vs-code-설치) 이용 |
 | `python` 명령이 다른 버전을 실행함 | 직접 `python` 대신 프로젝트에서 `uv run python` 사용 |
 | `ModuleNotFoundError` | 현재 Python 환경을 확인하고 [02장](02-packages.md)의 `uv add`로 의존성 기록 |
 | VS Code에서 import 오류 | **Python: Select Interpreter**에서 프로젝트의 `.venv` 선택 |

@@ -1,104 +1,164 @@
-# Python 개발환경 Quick Tour — uv로 시작하기
+# Python 개발환경 Quick Tour — VS Code Notebook까지 한 번에
 
-Windows 기준 실습 가이드. macOS/Linux는 [별도 설치 안내](05-macos-linux.md)를 참고한다.
+**이 페이지 하나만 따라 하면 첫 Python 실습을 시작할 수 있다.** Windows 11의 PowerShell을 기준으로 **uv로 Python 환경 준비 → VS Code 설치 → Notebook에서 코드 실행**까지 진행한다. 기본 실습에 Anaconda나 별도 Jupyter 서버는 필요하지 않다.
 
-Python은 [python.org](https://www.python.org/downloads/)에서 설치할 수도 있지만, 여기서는 **uv**로 설치·관리한다.
+macOS/Linux에서는 [별도 설치 안내](05-macos-linux.md)를 먼저 참고하고, VS Code·Notebook 사용법은 아래와 같다.
 
-**uv**는 Windows·macOS·Linux에서 작동하는 빠른 Python 관리 도구다.
+## 오늘 실습에서 할 일
 
-| 장점 | 설명 |
-|---|---|
-| 간편함 | 명령어로 Python·가상환경·패키지 관리 |
-| 자동 설치 | 필요한 Python 버전이 없으면 다운로드 |
-| 여러 버전 | 프로젝트마다 다른 Python 환경 사용 |
-| 빠른 속도 | 패키지 설치와 캐시 재사용 |
-| OS 공통 사용 | 한번 배우면 Windows·macOS·Linux에서 동일한 uv 명령 활용 |
-| AI 협업 | 설치·실행·오류 확인 절차를 명령어로 공유 |
+1. uv 설치 (필요한 Python은 uv가 준비)
+2. VS Code와 Python·Jupyter 확장 설치
+3. 실습 폴더 생성, `ipykernel` 설치
+4. VS Code에서 Notebook을 만들고 첫 코드 실행
 
 ### 잠깐! 왜 이름이 uv일까?
 
-**uv는 *Ultraviolet*(자외선)에서 따온 이름**이다. 개발자 Charlie Marsh는 두 글자라 **짧고 입력하기 쉬우며**, 별·천체를 연상시키는 회사 이름 *Astral*과도 어울린다고 설명했다. 명령어를 자주 입력하는 개발자를 생각한 이름이다.
+**uv는 *Ultraviolet*(자외선)에서 따온 이름**이다. 개발자 Charlie Marsh는 짧고 입력하기 쉬우며 회사 이름 *Astral*(별·천체를 연상시키는 말)과도 어울린다고 설명했다. [개발자 인터뷰](https://pythontest.com/testandcode/episodes/ruff-astral-uv-charlie-marsh/)
 
-출처: [Charlie Marsh 인터뷰, *Test & Code* 216회 (2024년 3월 11일)](https://pythontest.com/testandcode/episodes/ruff-astral-uv-charlie-marsh/)
+## 1. uv 설치
 
-## Windows에서 시작하기 (PowerShell)
-
-**1. uv 설치**
+Windows PowerShell을 열어 아래 명령을 실행한다. `winget`은 일반 Windows 11에 기본 제공되는 패키지 관리 도구다.
 
 ```powershell
 winget install --id=astral-sh.uv -e
 ```
 
-![Windows에서 winget으로 uv 설치 완료](images/01-winget-install.png)
+![winget으로 uv 설치한 실제 Windows 화면](images/01-winget-install.png)
 
-**Windows Sandbox에서 실습한다면:** Sandbox에는 기본적으로 `winget`과 Microsoft Store가 없다. `winget`을 찾지 못하는 경우에는 **위 명령 대신** 다음 Astral 공식 설치 명령을 실행한다. (두 방법을 모두 실행할 필요는 없다.)
+**`winget`이 없으면:** 위 명령 대신 Astral 공식 설치 스크립트를 사용한다. **둘 다 실행할 필요는 없다.** Windows Sandbox에서도 이 방법을 이용할 수 있다.
 
 ```powershell
 powershell -ExecutionPolicy Bypass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-이 명령은 인터넷에서 공식 설치 스크립트를 내려받아 실행한다. `-ExecutionPolicy Bypass`는 이 명령으로 실행한 PowerShell 프로세스에만 적용된다. [uv 공식 설치 안내](https://docs.astral.sh/uv/getting-started/installation/) · [Microsoft의 Windows Sandbox 설명](https://learn.microsoft.com/windows/package-manager/winget/#install-winget-on-windows-sandbox)
+회사·학교 PC의 보안 정책이 외부 스크립트 실행을 제한하면 해당 정책을 따른다.
 
-**2. 새 PowerShell에서 설치 확인**
+**PowerShell을 닫고 새로 열어 설치 확인**
 
 ```powershell
 uv --version
 ```
 
-![uv 버전 확인 결과](images/02-uv-version.png)
+![uv 버전을 확인한 실제 화면](images/02-uv-version.png)
 
-**3. 작업 폴더 생성**
+## 2. VS Code 설치
+
+웹사이트에서 설치 파일을 직접 내려받는 대신 `winget`을 이용한다.
 
 ```powershell
-mkdir python-study
+winget install --id Microsoft.VisualStudioCode -e
 ```
 
-**4. 작업 폴더로 이동**
+**`winget`이 없다면:** [VS Code 공식 다운로드](https://code.visualstudio.com/download)에서 Windows 설치 프로그램을 이용한다.
+
+설치 후 **PowerShell을 새로 열고** 설치를 확인한다.
+
+```powershell
+code --version
+```
+
+명령을 찾을 수 없다면 VS Code까지 완전히 닫았다가 다시 열거나 [VS Code 설치·설정 상세 안내](07-vscode.md)를 참고한다.
+
+## 3. VS Code 확장 설치
+
+**Python 확장**
+
+```powershell
+code --install-extension ms-python.python
+```
+
+**Jupyter 확장** — VS Code 안에서 Notebook(`.ipynb`)을 실행할 때 사용한다.
+
+```powershell
+code --install-extension ms-toolsai.jupyter
+```
+
+## 4. Python 실습 프로젝트 만들기
+
+PowerShell에서 다음 명령을 **하나씩** 실행한다. 이미 `python-study` 폴더를 만든 학생은 이 단계를 다시 실행하지 않는다.
+
+**실습 폴더와 uv 프로젝트 설정 생성**
+
+```powershell
+uv init --no-package python-study
+```
+
+**폴더로 이동**
 
 ```powershell
 cd python-study
 ```
 
-**5. Python 가상환경 생성**
+`uv init`은 프로젝트 설정을 만든다. 아직 Python이 설치되지 않았더라도 다음 단계에서 uv가 필요한 Python과 프로젝트 전용 가상환경(`.venv`)을 준비할 수 있다.
+
+## 5. Notebook 실행에 필요한 커널 설치
+
+`ipykernel`은 VS Code Notebook 셀의 Python 코드를 실행하는 도구다. 별도의 `notebook` 또는 `jupyterlab` 패키지를 설치할 필요는 없다.
 
 ```powershell
-uv venv
+uv add --dev ipykernel
 ```
 
-![uv 가상환경 생성 결과](images/03-venv-create.png)
+`--dev`는 개발·학습용 패키지로 구분해 기록한다는 뜻이다. 이 명령은 필요한 Python과 `.venv`도 자동으로 준비하므로 **앞에서 `uv venv`를 별도로 실행할 필요가 없다.**
 
-**6. Python 버전 확인**
+Python 설치 결과 확인:
 
 ```powershell
 uv run python --version
 ```
 
-![Python 버전 확인 결과](images/04-python-version.png)
+## 6. VS Code에서 실습 폴더 열기
 
-**7. Python 실행 확인**
+`python-study` 폴더 안에서 실행한다.
 
 ```powershell
-uv run python -c "print('Hello, Python!')"
+code .
 ```
 
-![첫 Python 코드 실행 결과](images/05-hello-python.png)
+VS Code가 열리면 왼쪽 탐색기에서 현재 폴더가 `python-study`인지 확인한다.
 
+## 7. 첫 Notebook 만들고 실행하기
 
-`uv venv`는 프로젝트 폴더의 `.venv`에 가상환경을 만든다. 이미 사용 가능한 Python을 활용하거나 필요하면 다운로드한다. **반드시 최신 Python을 고르는 것은 아니다.** 자세한 구조는 [01. Python과 가상환경](01-install.md)을 참고한다.
+1. VS Code에서 **`Ctrl+Shift+P`**를 누른다.
+2. **`Create: New Jupyter Notebook`**을 찾아 실행한다. 또는 새 파일 `hello.ipynb`를 만든다.
+3. 오른쪽 위 **Select Kernel**을 누른다.
+4. **Python Environments**에서 현재 프로젝트의 **`.venv\Scripts\python.exe`**를 선택한다. 메뉴 구성이 다르면 **Select Another Kernel**을 통해 찾는다.
+5. 첫 번째 코드 셀에 다음 코드를 입력하고, 셀 왼쪽의 **▶ Run**을 누른다.
 
-이어서 패키지를 관리하려면 [02. 패키지 관리와 개발 도구](02-packages.md), 새 프로젝트를 만들고 다른 컴퓨터에서 재현하려면 [03. 프로젝트 생성과 환경 재현](03-projects.md)을 따라 한다.
+```python
+print("Hello, Python!")
+```
 
-**기존 Python·Anaconda 정리, uv 업데이트, 디스크 용량과 폴더 관리**는 [고급 활용 Q&A](06-advanced.md)를 참고한다.
+정상 실행되면 셀 아래에 다음 결과가 나타난다.
 
-## 자세히 보기
+```text
+Hello, Python!
+```
 
-- [01. Python·가상환경과 생성 파일](01-install.md)
-- [02. 패키지 관리와 개발 도구](02-packages.md)
-- [03. 프로젝트 생성과 환경 재현](03-projects.md)
-- [04. 자주 발생하는 오류](04-troubleshooting.md)
-- [05. macOS / Linux 설치](05-macos-linux.md)
-- [06. 고급 활용 Q&A — 기존 환경·용량·폴더 정리](06-advanced.md)
+두 번째 셀에서도 시험해 본다.
 
-**참고:** uv를 설치해도 Git은 함께 설치되지 않는다. Git·GitHub는 별도로 다룬다.
+```python
+2 + 3
+```
 
-공식 자료: [uv 설치](https://docs.astral.sh/uv/getting-started/installation/) · [Python 자동 설치](https://docs.astral.sh/uv/guides/install-python/)
+```text
+5
+```
+
+**`Ctrl+S`로 노트북을 `hello.ipynb`로 저장**한다. 이제 설치부터 첫 실행까지 끝났다.
+
+> **주의:** 이 과정은 VS Code **안에서** Notebook을 실행하는 방법이다. 웹브라우저에서 JupyterLab을 실행하는 방법과는 다르다. 실제 화면 예시와 커널 문제 해결은 [VS Code 상세 안내](07-vscode.md)를 참고한다.
+
+## 더 자세히 알고 싶다면
+
+Quick Tour에서 막히지 않았다면 아래 내용은 **필요할 때만** 읽어도 된다.
+
+- [01. Python·가상환경의 개념과 구조](01-install.md)
+- [02. 패키지 관리와 `--dev`](02-packages.md)
+- [03. 프로젝트 생성·환경 재현과 GitHub](03-projects.md)
+- [04. 자주 발생하는 오류와 해결](04-troubleshooting.md)
+- [05. macOS/Linux 설치](05-macos-linux.md)
+- [06. 기존 Python·Anaconda, 업데이트, 디스크 관리 Q&A](06-advanced.md)
+- [07. VS Code 설치·설정·Notebook 상세 안내](07-vscode.md)
+
+공식 자료: [uv 설치](https://docs.astral.sh/uv/getting-started/installation/) · [uv의 VS Code Notebook 안내](https://docs.astral.sh/uv/guides/integration/jupyter/) · [VS Code Notebook 안내](https://code.visualstudio.com/docs/datascience/jupyter-notebooks)
