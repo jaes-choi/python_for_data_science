@@ -1,6 +1,6 @@
 # 05. macOS / Linux에서 Python 설치하기
 
-uv는 macOS·Linux에서도 사용할 수 있다. **설치 명령과 Python 실행 파일 경로만 다르고, `uv venv` 같은 주요 명령은 Windows와 같다.**
+uv는 macOS·Linux에서도 사용할 수 있다. 설치 명령과 Python 실행 파일 경로만 다르고, `uv venv` 같은 주요 명령은 Windows와 같다.
 
 ## 1. uv 설치 (터미널)
 

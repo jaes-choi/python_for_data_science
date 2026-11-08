@@ -1,112 +1,110 @@
-# 08. VS Code·Notebook 필수 단축키 (Windows)
+# 08. VS Code 단축키 — 필수와 유용 (Windows)
 
-[Quick Tour](README.md)에서 Notebook을 실행했다면, 마우스 대신 **키보드로 반복 작업을 빠르게 처리하는 습관**을 익혀보자.
+이번 강의는 VS Code에서 Python 파일(`.py`)과 Notebook(`.ipynb`)을 사용한다. 단축키는 **어디에서 사용하느냐**에 따라 나뉜다. 첫 실습에서는 각 영역의 '필수'만 익히고, 익숙해지면 '유용' 항목을 추가로 사용하자.
 
-**대상:** Windows 11 + VS Code + Python/Jupyter 확장 + uv 프로젝트. macOS는 키 조합이 다를 수 있어 [공식 키 설정 안내](https://code.visualstudio.com/docs/configure/keybindings)를 참고한다.
+- VS Code 공통: 파일 찾기, 명령 실행, 터미널·패널 관리
+- 코드 편집: 코드를 작성하거나 수정하는 중에 사용
+- Notebook 셀: `.ipynb`에서 셀을 실행·추가·삭제할 때 사용
 
-## 첫날 필수 8개 — 사용하는 위치별 구분
+## 1. VS Code 공통 단축키
 
-아래 단축키는 **VS Code에서 사용하는 키**다. 그러나 VS Code 자체의 **공통 기능**과 Notebook(`.ipynb`) **셀 조작**은 구분해야 한다.
+파일 종류와 관계없이 VS Code 창에서 사용한다.
 
-### VS Code 공통 — 4개
-
-일반 Python 파일(`.py`)이나 Notebook(`.ipynb`)을 열었을 때 모두 사용하는 기능이다.
-
-| 단축키 | 기능 | 사용 장면 |
-|---|---|---|
-| `Ctrl+Shift+P` | 명령 팔레트 | 명령 이름을 검색해 실행 |
-| `Ctrl+P` | 파일 빠른 열기 | 파일 이름으로 이동 |
-| `Ctrl + 백틱` | 통합 터미널 열기·닫기 | `uv` 명령 실행 |
-| `Ctrl+S` | 파일 저장 | `.py`, `.ipynb` 저장 |
-
-### VS Code Notebook 전용 — 4개
-
-**`.ipynb` 파일의 셀에 포커스가 있을 때** 사용하는 키다. 일반 `.py` 편집기에서는 동작이 다를 수 있다.
-
-| 단축키 | 기능 | 사용 장면 |
-|---|---|---|
-| `Shift+Enter` | 셀 실행 후 다음 셀로 이동 | 연속 실습 |
-| `Ctrl+Enter` | 현재 셀 실행 | 코드 수정 후 다시 실행 |
-| `Esc` / `Enter` | 명령 모드 / 편집 모드 | 셀 선택 ↔ 코드 입력 |
-| `A` / `B` | 위 / 아래에 셀 추가 | **명령 모드**에서 사용 |
-
-**`Ctrl+J`도 터미널이 열리는 것처럼 보일 수 있다.** 이 단축키는 VS Code **하단 패널 전체**를 표시하거나 숨긴다. 마지막으로 사용한 패널이 터미널이면 터미널이 나타나지만, **문제(Problems)**나 **출력(Output)** 화면이 나타날 수도 있다. 반면 **`Ctrl + 백틱`은 터미널을 직접 표시하거나 숨기는 단축키**다.
-
-백틱 키는 일반적으로 키보드 숫자 1의 왼쪽에 있다. 키보드 배열이 다르거나 단축키가 작동하지 않으면 **터미널 → 새 터미널** 메뉴를 이용할 수 있다.
-
-## VS Code 공통 단축키
-
-파일 종류와 관계없이 VS Code의 창, 파일, 패널, 검색 등을 다룰 때 사용한다.
+### 필수
 
 | 단축키 | 기능 |
 |---|---|
-| `Ctrl+Shift+E` | 탐색기 열기 |
-| `Ctrl+Shift+X` | 확장(Extensions) 화면 |
-| `Ctrl+Shift+P` 또는 `F1` | 명령 팔레트 |
-| `Ctrl+P` | 파일 이름으로 빠르게 열기 |
-| `Ctrl+Shift+F` | 프로젝트 전체 검색 |
-| `Ctrl+S` | 저장 |
-| `Ctrl+J` | 하단 패널 표시·숨기기 (터미널·문제·출력 등) |
-| `Ctrl + 백틱` | 통합 터미널 표시·숨기기 |
+| `Ctrl+Shift+P` | 명령 팔레트 열기 — 메뉴 이름을 검색해 실행 |
+| `Ctrl+P` | 파일 이름을 입력해 빠르게 열기 |
+| `Ctrl+S` | 현재 파일 저장 |
+| `Ctrl + 백틱` | 통합 터미널 표시·숨기기 — `uv` 명령 실행 |
 
-## VS Code 코드 편집 단축키
-
-Python 파일(`.py`)이나 Notebook의 **코드 셀 편집 영역**에서 코드를 작성·수정할 때 사용한다.
+### 유용
 
 | 단축키 | 기능 |
 |---|---|
-| `Ctrl+/` | 줄 주석 켜기·끄기 |
-| `Ctrl+D` | 동일한 다음 단어 추가 선택 |
-| `Alt+↑` / `Alt+↓` | 코드 줄 위·아래 이동 |
-| `Ctrl+Space` | 자동완성 제안 열기 |
-| `Ctrl+Shift+Space` | 함수 매개변수 정보 |
+| `Ctrl+J` | 하단 패널 표시·숨기기 |
+| `Ctrl+Shift+E` | 파일 탐색기 열기 |
+| `Ctrl+Shift+X` | 확장(Extensions) 화면 열기 |
+| `Ctrl+Shift+F` | 프로젝트 전체에서 검색 |
+| `Ctrl+K` 다음 `Ctrl+S` | 단축키 설정(Keyboard Shortcuts) 열기 |
 
-## VS Code Notebook(.ipynb)에서 셀 조작
+`Ctrl+J`는 **하단 패널 전체**를 전환한다. 마지막으로 사용한 패널이 터미널이면 터미널이 보이지만, Problems나 Output이 표시될 수도 있다. `Ctrl + 백틱`은 터미널을 직접 전환한다. 백틱 키는 보통 숫자 1 키 왼쪽에 있다. 키보드 배열에 따라 다르게 배치될 수 있다.
 
-**모드가 가장 중요합니다.** 셀 내부에 입력 커서가 깜빡일 때 `A`, `B`를 누르면 글자가 입력됩니다. 먼저 `Esc`를 눌러 **명령 모드**로 이동해야 셀 단위 단축키가 동작합니다.
+## 2. VS Code 코드 편집 단축키
 
-| 단축키 | 동작 |
+`.py` 편집기나 Notebook 코드 셀 **안에서 글자를 편집할 때** 사용한다.
+
+### 필수
+
+| 단축키 | 기능 |
 |---|---|
-| `Shift+Enter` | 셀 실행하고 다음 셀로 이동 |
+| `Ctrl+/` | 현재 줄을 주석으로 처리하거나 해제 |
+| `Ctrl+Z` | 방금 수정한 내용 되돌리기 |
+| `Ctrl+Space` | 자동완성 제안 표시 |
+
+### 유용
+
+| 단축키 | 기능 |
+|---|---|
+| `Ctrl+D` | 현재 선택한 단어와 같은 다음 단어도 선택 |
+| `Alt+↑` / `Alt+↓` | 코드 줄 위·아래로 이동 |
+| `Ctrl+Shift+Space` | 함수의 매개변수 정보 보기 |
+| `F2` | 변수·함수 이름 변경(Rename Symbol) |
+| `Ctrl+F` | 현재 파일 안에서 찾기 |
+
+편집 단축키는 **커서가 코드 입력 영역에 있을 때** 사용하는 것이 기본이다. Notebook의 셀 자체를 이동하거나 삭제하는 기능과는 구분한다.
+
+## 3. VS Code Notebook 셀 단축키
+
+`.ipynb` 파일에서 사용한다. 특히 **편집 모드와 명령 모드의 차이**를 기억하자. 셀 안에 입력 커서가 있으면 편집 모드이고, `Esc`로 셀을 선택하는 명령 모드로 전환한다.
+
+### 필수
+
+| 단축키 | 기능 |
+|---|---|
+| `Shift+Enter` | 현재 셀을 실행하고 다음 셀로 이동 |
 | `Ctrl+Enter` | 현재 셀 실행 |
-| `Alt+Enter` | 실행 후 아래 셀 추가 |
-| `Esc` / `Enter` | 명령 모드 / 편집 모드 |
-| `A` / `B` | 명령 모드에서 위 / 아래에 셀 추가 |
+| `Esc` / `Enter` | 명령 모드 / 편집 모드 전환 |
+| `A` / `B` | 명령 모드에서 현재 셀 위 / 아래에 셀 추가 |
+
+### 유용
+
+| 단축키 | 기능 |
+|---|---|
+| `Alt+Enter` | 현재 셀 실행 후 아래에 새 셀 추가 |
 | `D D` | 명령 모드에서 `D`를 두 번 눌러 셀 삭제 |
 | `Z` | 명령 모드에서 최근 셀 작업 취소 |
 | `M` / `Y` | 명령 모드에서 Markdown / Code 셀로 변경 |
-| `Alt+↑` / `Alt+↓` | 셀 위치 이동 |
-| `Ctrl+S` | Notebook 저장 |
 
-**구별하기:** `D D`는 D를 연속해서 두 번 누릅니다. `Ctrl+Enter`는 두 키를 동시에 누릅니다. 또한 `Ctrl+Enter`는 Notebook 셀에서는 **실행**이지만, 일반 `.py` 편집기에서는 **현재 줄 아래 새 줄 삽입**입니다.
+`Ctrl+Enter`는 두 키를 **동시에** 누른다. `D D`는 `D`를 **연속으로 두 번** 누른다. Notebook 셀에서 `Ctrl+Enter`는 실행이지만, 일반 `.py` 편집기에서는 새 줄을 삽입하므로 사용 위치를 구분해야 한다.
 
-**커널 중단·재시작**은 처음에는 Notebook 상단의 Interrupt/Restart 버튼 또는 `Ctrl+Shift+P`로 명령을 검색해 실행하세요. 브라우저 Jupyter의 `I I`, `0 0`이 VS Code에서 똑같이 동작하는 것은 아닙니다.
+커널 중단·재시작은 Notebook 상단의 Interrupt/Restart 버튼을 사용하거나 `Ctrl+Shift+P`에서 명령 이름을 검색한다. 브라우저 Jupyter의 `I I`, `0 0`이 VS Code에서도 동일하게 동작한다고 가정하지 않는다.
 
-## 3분 단축키 실습 — VS Code Notebook
+## 4. 3분 실습 — 필수 단축키 익히기
 
-[Quick Tour](README.md#7-첫-notebook-만들고-실행하기)에서 만든 `hello.ipynb`를 **VS Code에서 열고** 연습한다.
+[Quick Tour](README.md#7-첫-notebook-만들고-실행하기)에서 만든 `hello.ipynb`를 VS Code에서 열고 따라 해 보자.
 
-1. **명령 팔레트 열기:** `Ctrl+Shift+P`를 누르고 `Esc`로 닫는다. (VS Code 공통)
-2. **현재 셀 실행:** `print("Hello, Python!")` 셀에서 `Ctrl+Enter`를 누른다. (Notebook)
-3. **실행 후 이동:** `Shift+Enter`로 셀을 실행하고 다음 셀로 이동한다. (Notebook)
-4. **아래 셀 추가:** `Esc`로 명령 모드에 들어간 뒤 `B`를 누른다. (Notebook)
-5. **코드 입력·실행:** `Enter`로 편집 모드에 들어가 `10 * 3`을 입력한다. `Ctrl+Enter`로 실행해 `30`을 확인한다. (Notebook)
-6. **Markdown 전환:** `Esc` → `M`으로 셀 종류를 바꾸고 `## 오늘 배운 것`을 입력해 실행한다. (Notebook)
-7. **저장:** `Ctrl+S`로 파일을 저장한다. (VS Code 공통)
-
-처음부터 모든 단축키를 외울 필요는 없다. 실습을 반복하면서 **8개부터 자연스럽게 익히는 것**이 목표다.
+1. **명령 찾기:** `Ctrl+Shift+P`로 명령 팔레트를 연 다음 `Esc`로 닫는다.
+2. **파일 찾기:** `Ctrl+P`를 누르고 `hello.ipynb`를 입력해 현재 파일을 찾는다.
+3. **터미널 열기:** `Ctrl + 백틱`으로 터미널을 연다. 터미널에서 `uv --version`을 실행하고 다시 편집기로 돌아온다.
+4. **셀 실행:** `print("Hello, Python!")` 셀을 선택하고 `Ctrl+Enter`로 실행한다.
+5. **다음 셀로 이동:** `Shift+Enter`로 실행한 뒤 다음 셀로 이동한다.
+6. **새 셀 추가:** `Esc`로 명령 모드로 전환하고 `B`로 아래에 셀을 추가한다.
+7. **코드 작성:** `Enter`로 편집 모드에 들어가 `10 * 3`을 입력하고 `Ctrl+Enter`로 실행해 `30`을 확인한다.
+8. **저장:** `Ctrl+S`로 Notebook을 저장한다.
 
 ## 단축키가 다르게 동작할 때
 
-**실제 키 설정 확인:** `Ctrl+K`를 누른 뒤 손을 떼고 `Ctrl+S`를 누르면 **Keyboard Shortcuts** 설정 화면이 열린다. 검색창에서 `Notebook`, `Run Cell`, `Terminal` 등으로 명령과 할당된 키를 확인할 수 있다.
+`Ctrl+K`를 누른 뒤 손을 떼고 `Ctrl+S`를 누르면 VS Code의 Keyboard Shortcuts 창이 열린다. 여기서 기능 이름으로 검색해 **현재 설정된 키**를 확인할 수 있다.
 
-| 증상 | 해결 방법 |
+| 증상 | 확인할 것 |
 |---|---|
-| `A` / `B`를 눌렀는데 글자만 입력됨 | `Esc`로 셀 선택(명령 모드) 전환 |
-| `Shift+Enter`가 예상과 다름 | `.ipynb` Notebook 셀에 포커스가 있는지 확인 |
-| 터미널 단축키가 작동하지 않음 | 터미널 메뉴 또는 현재 키 설정 확인 |
-| 문서와 키가 다름 | 키맵 확장, 개인 설정, 키보드 배열 확인 |
+| `A`, `B`를 눌렀는데 글자만 입력됨 | `Esc`로 셀 명령 모드 전환 |
+| `Shift+Enter`가 작동하지 않음 | `.ipynb`의 Notebook 셀에 포커스가 있는지 확인 |
+| `Ctrl+J`를 눌렀는데 터미널이 안 보임 | 하단의 다른 패널이 열린 것일 수 있음. `Ctrl + 백틱`을 사용 |
+| 일부 단축키가 다름 | 개인 키 설정, 키맵 확장, 운영체제·키보드 배열 확인 |
 
-**기존 브라우저 Jupyter 단축키**는 [저장소 최상위 README](../../README.md)에서 별도로 설명한다.
+기존 브라우저 Jupyter 단축키는 [저장소 최상위 README](../../README.md)에 별도로 정리되어 있다.
 
 공식 자료: [VS Code Notebook](https://code.visualstudio.com/docs/datascience/jupyter-notebooks) · [기본 단축키](https://code.visualstudio.com/docs/reference/default-keybindings) · [단축키 설정](https://code.visualstudio.com/docs/configure/keybindings)

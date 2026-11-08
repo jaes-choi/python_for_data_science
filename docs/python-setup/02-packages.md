@@ -4,7 +4,7 @@
 
 ## 필요한 패키지 추가하기
 
-`python-study` 폴더에서 실행한다. **이미 프로젝트를 만들었다면 `uv init`이나 `uv venv`를 다시 실행하지 않는다.** 프로젝트 설정 파일(`pyproject.toml`)이 없는 경우에만 [03장의 프로젝트 생성 안내](03-projects.md)를 참고한다.
+`python-study` 폴더에서 실행한다. 이미 프로젝트를 만들었다면 `uv init`이나 `uv venv`를 다시 실행하지 않는다. 프로젝트 설정 파일(`pyproject.toml`)이 없는 경우에만 [03장의 프로젝트 생성 안내](03-projects.md)를 참고한다.
 
 **프로그램에서 사용할 패키지 추가**
 
@@ -86,7 +86,7 @@ uv pip list
 
 ![설치된 패키지 목록](images/06b-pip-list.png)
 
-`uv pip install`로만 추가한 패키지는 나중에 `uv sync`에서 제거될 수 있다. **지속적으로 사용할 프로젝트는 `uv add`로 관리하는 편이 안전하다.**
+`uv pip install`로만 추가한 패키지는 나중에 `uv sync`에서 제거될 수 있다. 지속적으로 사용할 프로젝트는 `uv add`로 관리하는 편이 안전하다.
 
 VS Code 설치, Python·Jupyter 확장, Notebook 커널 선택은 [07. VS Code 상세 안내](07-vscode.md)에서 다룬다. 다른 컴퓨터에서 환경을 재현하려면 [03장](03-projects.md)을 참고한다.
 

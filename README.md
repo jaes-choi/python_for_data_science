@@ -52,4 +52,4 @@
 - `Tab` — 자동완성
 - `Tab Tab` — 함수·메서드 매개변수 정보 (일부 Jupyter 환경)
 
-> **참고:** 위에는 Jupyter Notebook에서 널리 사용되는 단축키를 정리했습니다. 일부 키는 Jupyter 버전이나 VS Code Notebook에서 다르게 동작할 수 있습니다. 이번 강의에서 사용하는 VS Code 단축키는 [별도 안내](docs/python-setup/08-shortcuts.md)를 참고하세요. 셀 조작용 알파벳 단축키는 **명령 모드(`Esc`)**에서 사용합니다.
+> **참고:** 위에는 Jupyter Notebook에서 널리 사용되는 단축키를 정리했습니다. 일부 키는 Jupyter 버전이나 VS Code Notebook에서 다르게 동작할 수 있습니다. 이번 강의에서 사용하는 VS Code 단축키는 [별도 안내](docs/python-setup/08-shortcuts.md)를 참고하세요. 셀 조작용 알파벳 단축키는 명령 모드(`Esc`)에서 사용합니다.

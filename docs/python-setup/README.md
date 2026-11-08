@@ -27,7 +27,7 @@ winget install --id=astral-sh.uv -e
 
 ![winget으로 uv 설치한 실제 Windows 화면](images/01-winget-install.png)
 
-**`winget`이 없으면:** 위 명령 대신 Astral 공식 설치 스크립트를 사용한다. **둘 다 실행할 필요는 없다.** Windows Sandbox에서도 이 방법을 이용할 수 있다.
+`winget`이 없으면: 위 명령 대신 Astral 공식 설치 스크립트를 사용한다. **둘 다 실행할 필요는 없다.** Windows Sandbox에서도 이 방법을 이용할 수 있다.
 
 ```powershell
 powershell -ExecutionPolicy Bypass -c "irm https://astral.sh/uv/install.ps1 | iex"
@@ -53,7 +53,7 @@ uv --version
 winget install --id Microsoft.VisualStudioCode -e
 ```
 
-**`winget`이 없다면:** [VS Code 공식 다운로드](https://code.visualstudio.com/download)에서 Windows 설치 프로그램을 이용한다.
+`winget`이 없다면: [VS Code 공식 다운로드](https://code.visualstudio.com/download)에서 Windows 설치 프로그램을 이용한다.
 
 설치 후 **PowerShell을 새로 열고** 설치를 확인한다.
 
@@ -107,7 +107,7 @@ cd python-study
 uv add --dev ipykernel
 ```
 
-`--dev`는 개발·학습용 패키지로 구분해 기록한다는 뜻이다. 이 명령은 필요한 Python과 `.venv`도 자동으로 준비하므로 **앞에서 `uv venv`를 별도로 실행할 필요가 없다.**
+`--dev`는 개발·학습용 패키지로 구분해 기록한다는 뜻이다. 이 명령은 필요한 Python과 `.venv`도 자동으로 준비하므로 앞에서 `uv venv`를 별도로 실행할 필요가 없다.
 
 Python 설치 결과 확인:
 
@@ -117,7 +117,7 @@ uv run python --version
 
 ## 6. VS Code에서 실습 폴더 열기
 
-`python-study` 폴더 안에서 실행한다. **메뉴에서는 VS Code의 `파일 → 폴더 열기`**로 `python-study`를 선택하면 된다. 아래 명령은 같은 폴더를 바로 여는 간편한 방법이다.
+`python-study` 폴더 안에서 실행한다. 메뉴에서는 VS Code의 `파일 → 폴더 열기`로 `python-study`를 선택하면 된다. 아래 명령은 같은 폴더를 바로 여는 간편한 방법이다.
 
 ```powershell
 code .
@@ -127,17 +127,17 @@ VS Code가 열리면 왼쪽 탐색기에서 현재 폴더가 `python-study`인�
 
 ## 7. 첫 Notebook 만들고 실행하기
 
-1. VS Code에서 **`Ctrl+Shift+P`**를 누른다.
-2. **`Create: New Jupyter Notebook`**을 찾아 실행한다. 또는 새 파일 `hello.ipynb`를 만든다.
+1. VS Code에서 `Ctrl+Shift+P`를 누른다.
+2. `Create: New Jupyter Notebook`을 찾아 실행한다. 또는 새 파일 `hello.ipynb`를 만든다.
 3. 오른쪽 위 **Select Kernel**을 누른다. 목록에서 **Python Environments**를 선택한다.
 
    ![실제 VS Code의 Select Kernel 메뉴에서 Python Environments 선택](images/13-vscode-kernel-source.png)
 
-4. Python 목록에서 현재 프로젝트의 **`.venv\Scripts\python.exe`**를 선택한다. 다른 Python 버전이 여러 개 보여도 **프로젝트 이름과 `.venv` 경로**를 확인한다. 이 실습 화면에서는 **Recommended**로 표시되었다.
+4. Python 목록에서 현재 프로젝트의 `.venv\Scripts\python.exe`를 선택한다. 다른 Python 버전이 여러 개 보여도 프로젝트 이름과 `.venv` 경로를 확인한다. 이 실습 화면에서는 **Recommended**로 표시되었다.
 
    ![VS Code의 Python 환경 목록에서 python-study 프로젝트의 .venv 커널 선택](images/14-vscode-kernel-python-env.png)
 
-5. 첫 번째 코드 셀에 다음 코드를 입력하고, 셀 왼쪽의 **▶ Run** 또는 **`Shift+Enter`**를 누른다. **`Ctrl+Enter`**는 현재 셀을 실행한다. **`Esc` / `Enter`**로 셀 선택 모드와 편집 모드를 전환할 수 있다.
+5. 첫 번째 코드 셀에 코드를 입력한다. 셀 왼쪽의 ▶ Run 버튼을 누르거나 `Shift+Enter`로 실행한다. `Ctrl+Enter`는 현재 셀만 실행하고, `Esc`와 `Enter`는 셀 선택 모드와 편집 모드를 전환한다.
 
    명령을 모두 외울 필요는 없다. [VS Code·Notebook 필수 단축키 표](08-shortcuts.md)에서 실습하며 익힌다.
 
@@ -163,7 +163,7 @@ Hello, Python!
 
 ![실제 VS Code Notebook에서 프로젝트 Python 커널을 연결하고 두 셀을 실행한 결과](images/15-vscode-notebook-run.png)
 
-**`Ctrl+S`로 노트북을 `hello.ipynb`로 저장**한다. 이제 설치부터 첫 실행까지 끝났다.
+`Ctrl+S`로 노트북을 `hello.ipynb`로 저장한다. 이제 설치부터 첫 실행까지 끝났다.
 
 > **주의:** 이 과정은 VS Code **안에서** Notebook을 실행하는 방법이다. 웹브라우저에서 JupyterLab을 실행하는 방법과는 다르다. 실제 화면 예시와 커널 문제 해결은 [VS Code 상세 안내](07-vscode.md)를 참고한다.
 

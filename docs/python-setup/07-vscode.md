@@ -60,7 +60,7 @@ code .
 
 VS Code Jupyter 확장은 코드 셀을 실행하기 위해 Python 환경에 `ipykernel`이 필요하다. **Python 프로젝트에 별도의 Jupyter 서버 패키지를 설치할 필요는 없다.**
 
-**구분:** Python·Jupyter는 **VS Code 확장 메뉴에서 설치하는 확장**이고, `ipykernel`은 **Python 프로젝트에 `uv`로 설치하는 패키지**다. PowerShell이나 VS Code의 터미널에서 아래 명령을 실행한다.
+**구분:** Python·Jupyter는 **VS Code 확장 메뉴에서 설치하는 확장**이고, `ipykernel`은 Python 프로젝트에 `uv`로 설치하는 패키지다. PowerShell이나 VS Code의 터미널에서 아래 명령을 실행한다.
 
 프로젝트에 아직 설치하지 않았다면:
 
@@ -78,7 +78,7 @@ uv add --dev ipykernel
 
    ![실제 Select Kernel 메뉴에서 Python Environments 선택](images/13-vscode-kernel-source.png)
 
-4. Python 환경 목록에서 **`python-study\.venv\Scripts\python.exe`**를 고른다. 다른 Python이 여러 개 있어도 경로가 현재 프로젝트의 `.venv`인지 확인한다.
+4. Python 환경 목록에서 `python-study\.venv\Scripts\python.exe`를 고른다. 다른 Python이 여러 개 있어도 경로가 현재 프로젝트의 `.venv`인지 확인한다.
 
    ![Recommended로 표시된 프로젝트 가상환경의 Python 커널 선택](images/14-vscode-kernel-python-env.png)
 
@@ -122,7 +122,7 @@ uv run hello.py
 
 ## 7. 브라우저에서 Notebook을 사용하려면?
 
-**VS Code 안의 Notebook은 `ipykernel`만 설치**하면 된다. 브라우저에서 JupyterLab을 열고 싶은 경우에만 Jupyter 서버를 추가로 실행한다.
+VS Code 안의 Notebook은 `ipykernel`만 설치하면 된다. 브라우저에서 JupyterLab을 열고 싶은 경우에만 Jupyter 서버를 추가로 실행한다.
 
 ```powershell
 uv run --with jupyter jupyter lab
