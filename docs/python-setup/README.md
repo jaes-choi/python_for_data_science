@@ -25,7 +25,7 @@ Windows PowerShell을 열어 아래 명령을 실행한다. `winget`은 일반 W
 winget install --id=astral-sh.uv -e
 ```
 
-![winget으로 uv 설치한 실제 Windows 화면](images/01-winget-install.png)
+<a href="images/01-winget-install.png"><img src="images/01-winget-install.png" alt="winget으로 uv 설치한 실제 Windows 화면" width="860"></a>
 
 `winget`이 없으면: 위 명령 대신 Astral 공식 설치 스크립트를 사용한다. **둘 다 실행할 필요는 없다.** Windows Sandbox에서도 이 방법을 이용할 수 있다.
 
@@ -41,7 +41,7 @@ powershell -ExecutionPolicy Bypass -c "irm https://astral.sh/uv/install.ps1 | ie
 uv --version
 ```
 
-![uv 버전을 확인한 실제 화면](images/02-uv-version.png)
+<a href="images/02-uv-version.png"><img src="images/02-uv-version.png" alt="uv 버전을 확인한 실제 화면" width="610"></a>
 
 ## 2. VS Code 설치
 
@@ -131,11 +131,11 @@ VS Code가 열리면 왼쪽 탐색기에서 현재 폴더가 `python-study`인�
 2. `Create: New Jupyter Notebook`을 찾아 실행한다. 또는 새 파일 `hello.ipynb`를 만든다.
 3. 오른쪽 위 **Select Kernel**을 누른다. 목록에서 **Python Environments**를 선택한다.
 
-   ![실제 VS Code의 Select Kernel 메뉴에서 Python Environments 선택](images/13-vscode-kernel-source.png)
+   <a href="images/13-vscode-kernel-source.png"><img src="images/13-vscode-kernel-source.png" alt="실제 VS Code의 Select Kernel 메뉴에서 Python Environments 선택" width="1100"></a>
 
 4. Python 목록에서 현재 프로젝트의 `.venv\Scripts\python.exe`를 선택한다. 다른 Python 버전이 여러 개 보여도 프로젝트 이름과 `.venv` 경로를 확인한다. 이 실습 화면에서는 **Recommended**로 표시되었다.
 
-   ![VS Code의 Python 환경 목록에서 python-study 프로젝트의 .venv 커널 선택](images/14-vscode-kernel-python-env.png)
+   <a href="images/14-vscode-kernel-python-env.png"><img src="images/14-vscode-kernel-python-env.png" alt="VS Code의 Python 환경 목록에서 python-study 프로젝트의 .venv 커널 선택" width="1100"></a>
 
 5. 첫 번째 코드 셀에 코드를 입력한다. 셀 왼쪽의 ▶ Run 버튼을 누르거나 `Shift+Enter`로 실행한다. `Ctrl+Enter`는 현재 셀만 실행하고, `Esc`와 `Enter`는 셀 선택 모드와 편집 모드를 전환한다.
 
@@ -161,7 +161,7 @@ Hello, Python!
 5
 ```
 
-![실제 VS Code Notebook에서 프로젝트 Python 커널을 연결하고 두 셀을 실행한 결과](images/15-vscode-notebook-run.png)
+<a href="images/15-vscode-notebook-run.png"><img src="images/15-vscode-notebook-run.png" alt="실제 VS Code Notebook에서 프로젝트 Python 커널을 연결하고 두 셀을 실행한 결과" width="1100"></a>
 
 `Ctrl+S`로 노트북을 `hello.ipynb`로 저장한다. 이제 설치부터 첫 실행까지 끝났다.
 

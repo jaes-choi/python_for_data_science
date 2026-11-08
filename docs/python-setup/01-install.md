@@ -42,7 +42,7 @@ python-study/
 Get-ChildItem -Force .venv
 ```
 
-<a href="images/07-venv-files.png"><img src="images/07-venv-files.png" alt="Windows 가상환경의 실제 파일 목록" width="760"></a>
+<a href="images/07-venv-files.png"><img src="images/07-venv-files.png" alt="Windows 가상환경의 실제 파일 목록" width="700"></a>
 
 **실행 중인 Python 경로 확인**
 

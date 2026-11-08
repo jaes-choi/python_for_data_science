@@ -12,7 +12,7 @@
 uv add requests
 ```
 
-![uv add 실행 결과 예시](images/09-project-add.png)
+<a href="images/09-project-add.png"><img src="images/09-project-add.png" alt="uv add 실행 결과 예시" width="860"></a>
 
 **설치 확인**
 
@@ -76,7 +76,7 @@ uv sync --no-dev
 uv pip install requests
 ```
 
-![uv pip install의 실제 설치 화면](images/06-install-requests.png)
+<a href="images/06-install-requests.png"><img src="images/06-install-requests.png" alt="uv pip install의 실제 설치 화면" width="860"></a>
 
 **현재 가상환경의 패키지 목록**
 
@@ -84,7 +84,7 @@ uv pip install requests
 uv pip list
 ```
 
-![설치된 패키지 목록](images/06b-pip-list.png)
+<a href="images/06b-pip-list.png"><img src="images/06b-pip-list.png" alt="설치된 패키지 목록" width="610"></a>
 
 `uv pip install`로만 추가한 패키지는 나중에 `uv sync`에서 제거될 수 있다. 지속적으로 사용할 프로젝트는 `uv add`로 관리하는 편이 안전하다.
 

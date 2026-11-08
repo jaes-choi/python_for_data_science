@@ -76,11 +76,11 @@ uv add --dev ipykernel
 2. `Create: New Jupyter Notebook`을 입력해 실행하거나 `hello.ipynb` 파일을 만든다.
 3. Notebook 오른쪽 위의 **Select Kernel**을 누르고 **Python Environments**를 고른다.
 
-   ![실제 Select Kernel 메뉴에서 Python Environments 선택](images/13-vscode-kernel-source.png)
+   <a href="images/13-vscode-kernel-source.png"><img src="images/13-vscode-kernel-source.png" alt="실제 Select Kernel 메뉴에서 Python Environments 선택" width="1100"></a>
 
 4. Python 환경 목록에서 `python-study\.venv\Scripts\python.exe`를 고른다. 다른 Python이 여러 개 있어도 경로가 현재 프로젝트의 `.venv`인지 확인한다.
 
-   ![Recommended로 표시된 프로젝트 가상환경의 Python 커널 선택](images/14-vscode-kernel-python-env.png)
+   <a href="images/14-vscode-kernel-python-env.png"><img src="images/14-vscode-kernel-python-env.png" alt="Recommended로 표시된 프로젝트 가상환경의 Python 커널 선택" width="1100"></a>
 
 5. 셀에 코드를 넣은 뒤 ▶ 버튼을 눌러 실행한다.
 
@@ -96,7 +96,7 @@ Hello, Python!
 
 두 번째 셀에서 `2 + 3`을 실행하면 `5`가 출력된다. 아래 화면은 **실제 VS Code에서 두 셀을 실행한 결과**다.
 
-![VS Code Notebook의 실행 결과 Hello Python과 계산 결과 5](images/15-vscode-notebook-run.png)
+<a href="images/15-vscode-notebook-run.png"><img src="images/15-vscode-notebook-run.png" alt="VS Code Notebook의 실행 결과 Hello Python과 계산 결과 5" width="1100"></a>
 
 파일은 `Ctrl+S`로 `.ipynb` 확장자로 저장한다.
 
@@ -118,7 +118,7 @@ print("Hello from VS Code!")
 uv run hello.py
 ```
 
-![VS Code에서 실제 hello.py를 실행한 화면 — Notebook은 아님](images/12-vscode-hello.png)
+<a href="images/12-vscode-hello.png"><img src="images/12-vscode-hello.png" alt="VS Code에서 실제 hello.py를 실행한 화면 — Notebook은 아님" width="1050"></a>
 
 ## 7. 브라우저에서 Notebook을 사용하려면?
 
@@ -128,7 +128,7 @@ VS Code 안의 Notebook은 `ipykernel`만 설치하면 된다. 브라우저에�
 uv run --with jupyter jupyter lab
 ```
 
-![브라우저에서 실제 Jupyter Notebook을 실행한 화면 — VS Code는 아님](images/11-jupyter-notebook.png)
+<a href="images/11-jupyter-notebook.png"><img src="images/11-jupyter-notebook.png" alt="브라우저에서 실제 Jupyter Notebook을 실행한 화면 — VS Code는 아님" width="1080"></a>
 
 이 명령은 필요한 도구를 일시적으로 준비하며 일반 프로젝트 의존성으로 기록하지 않는다.
 

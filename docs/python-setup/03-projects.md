@@ -18,7 +18,7 @@ cd ..
 uv init --no-package hello-uv
 ```
 
-![실제 uv init 프로젝트 생성 결과](images/08-project-init.png)
+<a href="images/08-project-init.png"><img src="images/08-project-init.png" alt="실제 uv init 프로젝트 생성 결과" width="700"></a>
 
 **2. 프로젝트 폴더로 이동**
 
@@ -32,7 +32,7 @@ cd hello-uv
 uv run main.py
 ```
 
-![실제 uv run 실행 결과](images/10-project-run.png)
+<a href="images/10-project-run.png"><img src="images/10-project-run.png" alt="실제 uv run 실행 결과" width="590"></a>
 
 `--no-package`는 처음 배우기 쉬운 `main.py` 중심 구조를 만든다. `uv run`은 필요하면 환경을 생성·동기화한 뒤 프로그램을 실행한다. 새 패키지 추가·삭제 방법은 [02장](02-packages.md)에 정리했다.
 
