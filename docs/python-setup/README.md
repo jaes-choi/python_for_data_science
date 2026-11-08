@@ -31,6 +31,14 @@ winget install --id=astral-sh.uv -e
 
 ![Windows에서 winget으로 uv 설치 완료](images/01-winget-install.png)
 
+**Windows Sandbox에서 실습한다면:** Sandbox에는 기본적으로 `winget`과 Microsoft Store가 없다. `winget`을 찾지 못하는 경우에는 **위 명령 대신** 다음 Astral 공식 설치 명령을 실행한다. (두 방법을 모두 실행할 필요는 없다.)
+
+```powershell
+powershell -ExecutionPolicy Bypass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+이 명령은 인터넷에서 공식 설치 스크립트를 내려받아 실행한다. `-ExecutionPolicy Bypass`는 이 명령으로 실행한 PowerShell 프로세스에만 적용된다. [uv 공식 설치 안내](https://docs.astral.sh/uv/getting-started/installation/) · [Microsoft의 Windows Sandbox 설명](https://learn.microsoft.com/windows/package-manager/winget/#install-winget-on-windows-sandbox)
+
 **2. 새 PowerShell에서 설치 확인**
 
 ```powershell

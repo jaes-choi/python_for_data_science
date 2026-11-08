@@ -8,12 +8,14 @@ Windows PowerShell 기준. **같은 명령을 반복 설치하기 전에 오류 
 |---|---|
 | PowerShell에서 `uv`를 찾지 못함 | 설치 후 새 PowerShell을 연다. 그래도 안 되면 설치·PATH 확인 |
 | VS Code 터미널에서 `uv`를 찾지 못함 | uv 설치 후 **VS Code를 완전히 종료하고 다시 연다** |
-| `winget`이 없음 | Windows App Installer 확인 또는 [uv 공식 설치 안내](https://docs.astral.sh/uv/getting-started/installation/) |
+| `winget`이 없음 | 일반 Windows에서는 **App Installer** 확인. **Windows Sandbox에는 `winget`이 기본 포함되지 않으므로** [Quick Tour의 공식 스크립트 설치 방법](README.md#windows에서-시작하기-powershell) 이용 |
 | `python` 명령이 다른 버전을 실행함 | 직접 `python` 대신 프로젝트에서 `uv run python` 사용 |
 | `ModuleNotFoundError` | 현재 Python 환경을 확인하고 [02장](02-packages.md)의 `uv add`로 의존성 기록 |
 | VS Code에서 import 오류 | **Python: Select Interpreter**에서 프로젝트의 `.venv` 선택 |
 | PowerShell 활성화 스크립트 오류 | 활성화 대신 `uv run`으로 실행 |
 | 패키지 설치 실패 | 패키지 이름, 인터넷 연결, Python 버전 지원 여부 확인 |
+
+Windows Sandbox는 **일반 Windows 설치 상태를 그대로 복제하지 않으므로** `winget`이 없다는 메시지는 uv 오류가 아니다. Sandbox 안에 uv를 직접 설치할 수 있지만, Sandbox를 종료하면 그 안에서 설치한 프로그램도 사라진다. `winget` 자체를 Sandbox에 설치하고 싶다면 [Microsoft 공식 절차](https://learn.microsoft.com/windows/package-manager/winget/#install-winget-on-windows-sandbox)를 참고한다.
 
 `Failed to hardlink files` 경고는 캐시와 가상환경이 서로 다른 드라이브에 있을 때 발생할 수 있다. **설치가 정상 완료됐다면 오류가 아니다.** 용량·캐시 관련 설명은 [06장](06-advanced.md)을 참고한다.
 
