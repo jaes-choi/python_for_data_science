@@ -137,7 +137,9 @@ VS Code가 열리면 왼쪽 탐색기에서 현재 폴더가 `python-study`인�
 
    ![VS Code의 Python 환경 목록에서 python-study 프로젝트의 .venv 커널 선택](images/14-vscode-kernel-python-env.png)
 
-5. 첫 번째 코드 셀에 다음 코드를 입력하고, 셀 왼쪽의 **▶ Run**을 누른다.
+5. 첫 번째 코드 셀에 다음 코드를 입력하고, 셀 왼쪽의 **▶ Run** 또는 **`Shift+Enter`**를 누른다. **`Ctrl+Enter`**는 현재 셀을 실행한다. **`Esc` / `Enter`**로 셀 선택 모드와 편집 모드를 전환할 수 있다.
+
+   명령을 모두 외울 필요는 없다. [VS Code·Notebook 필수 단축키 표](08-shortcuts.md)에서 실습하며 익힌다.
 
 ```python
 print("Hello, Python!")
@@ -176,5 +178,6 @@ Quick Tour에서 막히지 않았다면 아래 내용은 **필요할 때만** �
 - [05. macOS/Linux 설치](05-macos-linux.md)
 - [06. 기존 Python·Anaconda, 업데이트, 디스크 관리 Q&A](06-advanced.md)
 - [07. VS Code 설치·설정·Notebook 상세 안내](07-vscode.md)
+- [08. VS Code·Notebook 필수 단축키와 연습](08-shortcuts.md)
 
 공식 자료: [uv 설치](https://docs.astral.sh/uv/getting-started/installation/) · [uv의 VS Code Notebook 안내](https://docs.astral.sh/uv/guides/integration/jupyter/) · [VS Code Notebook 안내](https://code.visualstudio.com/docs/datascience/jupyter-notebooks)

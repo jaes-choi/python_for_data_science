@@ -102,6 +102,8 @@ Hello, Python!
 
 > 화면 구성이 VS Code 버전에 따라 다를 수 있다. 위 경로는 Windows용이다. macOS/Linux에서는 `.venv/bin/python`을 선택한다.
 
+Notebook 셀을 키보드로 빠르게 실행·이동·추가하는 방법은 [08. VS Code·Notebook 필수 단축키](08-shortcuts.md)를 참고한다.
+
 ## 6. Python 파일도 VS Code에서 실행하기
 
 Notebook 외에 `.py` 파일도 작성할 수 있다. `hello.py`를 만든 다음 코드를 입력한다.
