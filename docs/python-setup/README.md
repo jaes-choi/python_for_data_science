@@ -2,6 +2,8 @@
 
 **이 페이지 하나만 따라 하면 첫 Python 실습을 시작할 수 있다.** Windows 11의 PowerShell을 기준으로 **uv로 Python 환경 준비 → VS Code 설치 → Notebook에서 코드 실행**까지 진행한다. 기본 실습에 Anaconda나 별도 Jupyter 서버는 필요하지 않다.
 
+**설치 방법은 두 가지다.** 웹사이트에서 설치 파일을 내려받거나 VS Code의 메뉴에서 확장을 찾아 **클릭해서 설치해도 된다.** 이번 교재에서는 같은 과정을 **명령어로 빠르고 반복 가능하게 실행하는 방법**을 먼저 보여준다. 명령어를 여러 개 차례로 실행하는 것이며, GUI 설치가 틀린 방법이라는 뜻은 아니다.
+
 macOS/Linux에서는 [별도 설치 안내](05-macos-linux.md)를 먼저 참고하고, VS Code·Notebook 사용법은 아래와 같다.
 
 ## 오늘 실습에서 할 일
@@ -43,7 +45,9 @@ uv --version
 
 ## 2. VS Code 설치
 
-웹사이트에서 설치 파일을 직접 내려받는 대신 `winget`을 이용한다.
+**일반적인 방법:** [VS Code 공식 홈페이지](https://code.visualstudio.com/download)에서 설치 파일을 다운로드한 뒤 설치 화면의 안내에 따라 진행해도 된다.
+
+**명령어로 설치하는 방법(이번 교재):** 다운로드 페이지를 직접 방문하지 않고 `winget`으로 설치할 수도 있다. **둘 중 한 방법만 사용한다.**
 
 ```powershell
 winget install --id Microsoft.VisualStudioCode -e
@@ -60,6 +64,10 @@ code --version
 명령을 찾을 수 없다면 VS Code까지 완전히 닫았다가 다시 열거나 [VS Code 설치·설정 상세 안내](07-vscode.md)를 참고한다.
 
 ## 3. VS Code 확장 설치
+
+**메뉴로 설치해도 된다:** VS Code 왼쪽 **Extensions(확장)** 아이콘 또는 `Ctrl+Shift+X` → 검색창에서 **Python** 검색 → **Microsoft**가 제공하는 Python 확장의 **Install** 선택. 같은 방법으로 **Jupyter**(Microsoft)도 설치한다.
+
+**이번 교재에서는 아래 명령어로 대신 설치한다.** 메뉴에서 확장을 하나씩 검색하고 설치 버튼을 누르는 과정과 같은 결과다. 이미 설치되어 있으면 다시 설치할 필요가 없다.
 
 **Python 확장**
 
@@ -93,7 +101,7 @@ cd python-study
 
 ## 5. Notebook 실행에 필요한 커널 설치
 
-`ipykernel`은 VS Code Notebook 셀의 Python 코드를 실행하는 도구다. 별도의 `notebook` 또는 `jupyterlab` 패키지를 설치할 필요는 없다.
+`ipykernel`은 VS Code Notebook 셀의 Python 코드를 실행하는 도구다. **VS Code 확장과 달리 Python 프로젝트에 설치하는 패키지**이므로 PowerShell이나 VS Code 터미널에서 `uv` 명령으로 설치한다. 별도의 `notebook` 또는 `jupyterlab` 패키지는 필요하지 않다.
 
 ```powershell
 uv add --dev ipykernel
@@ -109,7 +117,7 @@ uv run python --version
 
 ## 6. VS Code에서 실습 폴더 열기
 
-`python-study` 폴더 안에서 실행한다.
+`python-study` 폴더 안에서 실행한다. **메뉴에서는 VS Code의 `파일 → 폴더 열기`**로 `python-study`를 선택하면 된다. 아래 명령은 같은 폴더를 바로 여는 간편한 방법이다.
 
 ```powershell
 code .

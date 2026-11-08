@@ -2,9 +2,13 @@
 
 [Quick Tour](README.md)만으로 설치부터 첫 Notebook 실행까지 진행할 수 있다. 여기서는 **VS Code 설치 확인, Python·Jupyter 확장, 커널 선택, 오류 해결**을 자세히 설명한다. Windows 11 PowerShell 기준이다.
 
+**메뉴·설치 화면을 클릭하는 방식도 가능하다.** `winget`, `code --install-extension`, `code .`는 각각 다운로드·설치·폴더 열기 작업을 **명령어로 간편하게 처리하는 대안**이다. 자신에게 편한 방법 한 가지를 선택하면 된다.
+
 ## 1. VS Code 설치
 
-일반 Windows 11에서는 `winget`으로 설치하는 방법을 권장한다.
+**화면에서 설치:** [VS Code 공식 다운로드 페이지](https://code.visualstudio.com/download)에서 Windows 설치 프로그램을 내려받고 안내에 따라 설치한다.
+
+**명령어로 설치:** 일반 Windows 11에서는 `winget`으로 위 다운로드·설치 과정을 간편하게 진행할 수 있다. 이미 설치되어 있다면 건너뛴다.
 
 ```powershell
 winget install --id Microsoft.VisualStudioCode -e
@@ -22,7 +26,11 @@ code --version
 
 ## 2. 확장 설치
 
-VS Code의 확장(Extensions)은 Python 언어 지원과 Notebook 실행 기능을 추가한다. 아래 명령 또는 VS Code 왼쪽 **Extensions(`Ctrl+Shift+X`)** 메뉴에서 설치할 수 있다.
+VS Code의 확장(Extensions)은 Python 언어 지원과 Notebook 실행 기능을 추가한다.
+
+**화면에서 설치:** VS Code 왼쪽 **Extensions** 아이콘 클릭(단축키 `Ctrl+Shift+X`) → 검색창에 **Python** 입력 → 게시자가 **Microsoft**인 Python 확장 선택 → **Install**. 같은 절차로 **Jupyter** 확장도 설치한다.
+
+**명령어로 설치:** 아래 `code --install-extension` 두 명령을 순서대로 실행하면 위 메뉴 조작과 동일하게 설치할 수 있다. 이미 설치되어 있다면 생략한다.
 
 **Python 확장 (Microsoft)**
 
@@ -40,7 +48,7 @@ code --install-extension ms-toolsai.jupyter
 
 아직 실습을 시작하지 않았다면 먼저 [Quick Tour](README.md#4-python-실습-프로젝트-만들기)에서 `python-study`를 만든다. 앞에서 이미 만들었다면 **중복으로 생성하지 않는다.**
 
-`python-study` 폴더에서 실행한다.
+`python-study` 폴더에서 실행한다. VS Code에서 **파일 → 폴더 열기** 메뉴로 직접 열어도 같은 결과다.
 
 ```powershell
 code .
@@ -51,6 +59,8 @@ code .
 ## 4. Notebook용 Python 커널 준비
 
 VS Code Jupyter 확장은 코드 셀을 실행하기 위해 Python 환경에 `ipykernel`이 필요하다. **Python 프로젝트에 별도의 Jupyter 서버 패키지를 설치할 필요는 없다.**
+
+**구분:** Python·Jupyter는 **VS Code 확장 메뉴에서 설치하는 확장**이고, `ipykernel`은 **Python 프로젝트에 `uv`로 설치하는 패키지**다. PowerShell이나 VS Code의 터미널에서 아래 명령을 실행한다.
 
 프로젝트에 아직 설치하지 않았다면:
 
