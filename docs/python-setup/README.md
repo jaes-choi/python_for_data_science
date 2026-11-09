@@ -6,6 +6,36 @@
 
 macOS/Linux에서는 [별도 설치 안내](05-macos-linux.md)를 먼저 참고하고, VS Code·Notebook 사용법은 아래와 같다.
 
+## 먼저 빨리 해 보고 싶다면 — 명령어로 설치하기 (Windows 11)
+
+설명보다 **직접 실행해 보는 것이 먼저**라면, 아래 명령어를 **1 → 2 → 3 순서로** 복사해 실행하자. Windows 11의 일반 PowerShell에서 진행하며 `winget`과 인터넷 연결이 필요하다. 설치 과정과 각 명령어의 의미는 아래에서 차근차근 설명한다.
+
+### ① uv와 VS Code 설치
+
+```powershell
+winget install --id astral-sh.uv -e
+winget install --id Microsoft.VisualStudioCode -e
+```
+
+설치가 끝나면 **PowerShell을 닫고 다시 연다.** 새로 설치한 `uv`, `code` 명령을 인식하도록 하기 위해서다.
+
+### ② Python·Jupyter 확장 설치
+
+```powershell
+code --install-extension ms-python.python
+code --install-extension ms-toolsai.jupyter
+```
+
+### ③ 실습 프로젝트와 Notebook 커널 준비
+
+```powershell
+uv init --no-package python-study
+cd python-study
+uv add --dev ipykernel
+```
+
+`python-study` 폴더가 이미 있다면 프로젝트 생성 명령은 생략하고 기존 폴더에서 이어서 실행한다. **설치 후 Notebook 실행과 커널 연결은 [7단계](#7-첫-notebook-만들고-실행하기)**를 따라 하면 된다. `winget`이 없는 Windows Sandbox 등은 [설치 대안](#1-uv-설치)을 참고한다.
+
 ## 오늘 실습에서 할 일
 
 1. uv 설치 (필요한 Python은 uv가 준비)
@@ -166,36 +196,6 @@ Hello, Python!
 `Ctrl+S`로 노트북을 `hello.ipynb`로 저장한다. 이제 설치부터 첫 실행까지 끝났다.
 
 > **주의:** 이 과정은 VS Code **안에서** Notebook을 실행하는 방법이다. 웹브라우저에서 JupyterLab을 실행하는 방법과는 다르다. 실제 화면 예시와 커널 문제 해결은 [VS Code 상세 안내](07-vscode.md)를 참고한다.
-
-## 설치 명령어 모아보기 (Windows 11)
-
-앞에서 설명한 명령어만 **설치 단계별로 묶은 요약**이다. 처음 배우는 학생은 위의 설명을 따라가고, 다시 설치할 때는 필요한 부분만 복사해 사용할 수 있다. Windows 11의 일반 PowerShell 기준이며 `winget`이 필요하다.
-
-### 1. uv와 VS Code 설치
-
-```powershell
-winget install --id astral-sh.uv -e
-winget install --id Microsoft.VisualStudioCode -e
-```
-
-설치가 끝나면 **PowerShell을 닫고 다시 연다.** 새로 설치한 `uv`, `code` 명령을 인식하도록 하기 위해서다.
-
-### 2. Python·Jupyter 확장 설치
-
-```powershell
-code --install-extension ms-python.python
-code --install-extension ms-toolsai.jupyter
-```
-
-### 3. 실습 프로젝트와 Notebook 커널 준비
-
-```powershell
-uv init --no-package python-study
-cd python-study
-uv add --dev ipykernel
-```
-
-`python-study`가 이미 있다면 프로젝트 생성 명령을 다시 실행하지 말고 기존 폴더로 이동해 필요한 명령만 실행한다. **프로그램 실행과 커널 연결은 [7단계 Notebook 실습](#7-첫-notebook-만들고-실행하기)에서 진행한다.** `winget`이 없는 Windows Sandbox 등에서는 [단계별 설치 대안](#1-uv-설치)을 참고한다.
 
 ## 더 자세히 알고 싶다면
 
