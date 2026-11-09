@@ -3,6 +3,13 @@
 
 실습에 필요한 파일들이 저장되어 있습니다.
 
+## AI Agent 입문 (신규 실습)
+
+- [AI Agent 입문 — Windows / macOS / Linux 설치부터 실습·검증까지](docs/ai-agent/README.md)
+- 순서: AI Agent 개념 → Codex Quick Tour → 통합 실습 → 검증·안전 → Claude Code·Google Antigravity → 무료 에이전트 → Ollama+OpenCode 로컬 LLM
+- [쇼핑 계산기와 자동 테스트](agent_lab/): 입력·누락 가격·CSV·보고서·교통사고 데이터 확장 예제
+
+
 - [Python 개발환경 설치 및 Notebook 첫 실습](docs/python-setup/README.md)
 - [VS Code·Notebook 단축키 상세 안내](docs/python-setup/08-shortcuts.md)
 
