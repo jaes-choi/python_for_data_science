@@ -167,6 +167,79 @@ Hello, Python!
 
 > **주의:** 이 과정은 VS Code **안에서** Notebook을 실행하는 방법이다. 웹브라우저에서 JupyterLab을 실행하는 방법과는 다르다. 실제 화면 예시와 커널 문제 해결은 [VS Code 상세 안내](07-vscode.md)를 참고한다.
 
+## 한 번에 설치·준비하기 (선택: Windows 11)
+
+위에서 소개한 **설치·준비 명령만 모은 PowerShell 스크립트**다. Windows 11에서 아래 블록 **전체를 한 번에 복사해 붙여넣으면** uv, VS Code, Python/Jupyter 확장, 실습 프로젝트와 ipykernel을 순서대로 준비한다. `winget`이 필요하며 인터넷 연결과 설치 약관 동의가 필요할 수 있다.
+
+단계별 명령을 이미 실행했다면 다시 실행하지 않아도 된다. 기존 `python-study` 폴더에 `pyproject.toml`이 없을 때에는 기존 파일을 보호하기 위해 중단한다. **이 블록에는 설치 확인·버전 테스트·Notebook 실행을 넣지 않았다.** 설치 후 [7단계 Notebook 실습](#7-첫-notebook-만들고-실행하기)에서 별도로 확인한다.
+
+```powershell
+# Windows 11 PowerShell: uv + VS Code + extensions + ipykernel 설치
+$ErrorActionPreference = "Stop"
+if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
+    throw "winget을 찾을 수 없습니다. 단계별 설치 안내를 확인하세요."
+}
+if (-not (Get-Command uv.exe -ErrorAction SilentlyContinue)) {
+    winget install --id astral-sh.uv -e --accept-package-agreements --accept-source-agreements
+    if ($LASTEXITCODE -ne 0) { throw "uv 설치에 실패했습니다." }
+}
+$codePaths = @(
+    "$env:LOCALAPPDATA\Programs\Microsoft VS Code\bin\code.cmd",
+    "$env:ProgramFiles\Microsoft VS Code\bin\code.cmd"
+)
+$codePath = $codePaths | Where-Object { Test-Path $_ } | Select-Object -First 1
+if (-not $codePath) {
+    $found = Get-Command code.cmd -ErrorAction SilentlyContinue
+    if ($found) { $codePath = $found.Source }
+}
+if (-not $codePath) {
+    winget install --id Microsoft.VisualStudioCode -e --accept-package-agreements --accept-source-agreements
+    if ($LASTEXITCODE -ne 0) { throw "VS Code 설치에 실패했습니다." }
+}
+$env:Path = [Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [Environment]::GetEnvironmentVariable("Path", "User")
+if (-not $codePath) {
+    $codePath = $codePaths | Where-Object { Test-Path $_ } | Select-Object -First 1
+    if (-not $codePath) {
+        $found = Get-Command code.cmd -ErrorAction SilentlyContinue
+        if ($found) { $codePath = $found.Source }
+    }
+}
+if (-not $codePath) { throw "VS Code 명령을 찾지 못했습니다. 새 PowerShell에서 확인하세요." }
+$foundUv = Get-Command uv.exe -ErrorAction SilentlyContinue
+$uvPath = if ($foundUv) { $foundUv.Source } else { $null }
+if (-not $uvPath) {
+    $uvLink = "$env:LOCALAPPDATA\Microsoft\WinGet\Links\uv.exe"
+    if (Test-Path $uvLink) { $uvPath = $uvLink }
+}
+if (-not $uvPath) {
+    $foundFile = Get-ChildItem "$env:LOCALAPPDATA\Microsoft\WinGet\Packages" -Filter uv.exe -Recurse -File -ErrorAction SilentlyContinue | Select-Object -First 1
+    if ($foundFile) { $uvPath = $foundFile.FullName }
+}
+if (-not $uvPath) { throw "uv 명령을 찾지 못했습니다. 새 PowerShell에서 확인하세요." }
+& $codePath --install-extension ms-python.python
+if ($LASTEXITCODE -ne 0) { throw "Python 확장 설치에 실패했습니다." }
+& $codePath --install-extension ms-toolsai.jupyter
+if ($LASTEXITCODE -ne 0) { throw "Jupyter 확장 설치에 실패했습니다." }
+
+$project = Join-Path $HOME "python-study"
+if (-not (Test-Path $project)) {
+    & $uvPath init --no-package $project
+    if ($LASTEXITCODE -ne 0) { throw "uv 프로젝트 생성에 실패했습니다." }
+} elseif (-not (Test-Path (Join-Path $project "pyproject.toml"))) {
+    throw "기존 python-study 폴더에 pyproject.toml이 없습니다. 기존 파일 보호를 위해 중단합니다."
+}
+Push-Location $project
+try {
+    & $uvPath add --dev ipykernel
+    if ($LASTEXITCODE -ne 0) { throw "ipykernel 설치에 실패했습니다." }
+} finally {
+    Pop-Location
+}
+Write-Host "설치·준비 단계가 끝났습니다. Notebook 실행은 Quick Tour에서 별도로 확인하세요."
+```
+
+Windows Sandbox 등에서 `winget`이 없으면 [단계별 설치 안내](#1-uv-설치)를 이용한다.
+
 ## 더 자세히 알고 싶다면
 
 Quick Tour에서 막히지 않았다면 아래 내용은 **필요할 때만** 읽어도 된다.
